@@ -1,0 +1,1179 @@
+<!DOCTYPE html>
+<html lang="简体中文">
+
+
+
+
+
+
+
+<head>
+	
+	
+	<link rel="stylesheet" href="/css/allinone.min.css">
+
+	
+
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+	<title>梳庇湖砍柴人 | 梳庇湖砍柴人</title>
+
+	<meta name="HandheldFriendly" content="True">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+	<meta name="generator" content="hexo">
+	<meta name="author" content="ZhouKanZ">
+	<meta name="description" content="">
+
+	
+	<meta name="keywords" content="">
+	
+
+	
+	<link rel="shortcut icon" href="https://i.loli.net/2017/11/26/5a19c0b50432e.png">
+	<link rel="apple-touch-icon" href="https://i.loli.net/2017/11/26/5a19c0b50432e.png">
+	
+
+	
+	<meta name="theme-color" content="#3c484e">
+	<meta name="msapplication-TileColor" content="#3c484e">
+	
+
+	
+
+	
+
+	<meta property="og:site_name" content="梳庇湖砍柴人">
+	<meta property="og:type" content="article">
+	<meta property="og:title" content="梳庇湖砍柴人 | 梳庇湖砍柴人">
+	<meta property="og:description" content="">
+	<meta property="og:url" content="http://yoursite.com/2018/12/26/Java8-lambda表达式/">
+
+	
+	<meta property="article:published_time" content="2018-12-26T17:12:06+08:00"> 
+	<meta property="article:author" content="ZhouKanZ">
+	<meta property="article:published_first" content="梳庇湖砍柴人, /2018/12/26/Java8-lambda表达式/">
+	
+</head>
+<body class="post-template">
+	<div class="site-wrapper">
+		
+
+
+
+
+<header class="site-header outer" style="z-index: 999">
+    <div class="inner">
+        
+<nav class="site-nav"> 
+    <div class="site-nav-left">
+        <ul class="nav">
+            <li>
+                
+                <a href="/" title="Home">HOME</a>
+                
+            </li>
+            
+            
+            <li>
+                <a href="/about" title="ABOUT">ABOUT</a>
+            </li>
+            
+            <li>
+                <a href="/archives" title="ARCHIVES">ARCHIVES</a>
+            </li>
+            
+            
+        </ul> 
+    </div>
+    
+    <div class="search-button">
+        <a href="#search" class="subscribe-button" style="margin: 0 10px;">Search ...</a>
+    </div>
+     
+    <div class="site-nav-right">
+        
+        <a href="#search" class="subscribe-button" style="margin: 0 10px;">Search ...</a>
+         
+        
+<div class="social-links">
+    
+    <a class="social-link" title="weibo" href="https://weibo.com/6302298994/" target="_blank" rel="noopener">
+        <svg viewbox="0 0 1141 1024" xmlns="http://www.w3.org/2000/svg"><path d="M916.48 518.144q27.648 21.504 38.912 51.712t9.216 62.976-14.336 65.536-31.744 59.392q-34.816 48.128-78.848 81.92t-91.136 56.32-94.72 35.328-89.6 18.944-75.264 7.68-51.712 1.536-49.152-2.56-68.096-10.24-78.336-21.504-79.872-36.352-74.24-55.296-59.904-78.848q-16.384-29.696-22.016-63.488t-5.632-86.016q0-22.528 7.68-51.2t27.136-63.488 53.248-75.776 86.016-90.112q51.2-48.128 105.984-85.504t117.248-57.856q28.672-10.24 63.488-11.264t57.344 11.264q10.24 11.264 19.456 23.04t12.288 29.184q3.072 14.336 0.512 27.648t-5.632 26.624-5.12 25.6 2.048 22.528q17.408 2.048 33.792-1.536t31.744-9.216 31.232-11.776 33.28-9.216q27.648-5.12 54.784-4.608t49.152 7.68 36.352 22.016 17.408 38.4q2.048 14.336-2.048 26.624t-8.704 23.04-7.168 22.016 1.536 23.552q3.072 7.168 14.848 13.312t27.136 12.288 32.256 13.312 29.184 16.384zM658.432 836.608q26.624-16.384 53.76-45.056t44.032-64 18.944-75.776-20.48-81.408q-19.456-33.792-47.616-57.344t-62.976-37.376-74.24-19.968-80.384-6.144q-78.848 0-139.776 16.384t-105.472 43.008-72.192 60.416-38.912 68.608q-11.264 33.792-6.656 67.072t20.992 62.976 42.496 53.248 57.856 37.888q58.368 25.6 119.296 32.256t116.224 0.512 100.864-21.504 74.24-33.792zM524.288 513.024q20.48 8.192 38.912 18.432t32.768 27.648q10.24 12.288 17.92 30.72t10.752 39.424 1.536 42.496-9.728 38.912q-8.192 18.432-19.968 37.376t-28.672 35.328-40.448 29.184-57.344 18.944q-61.44 11.264-117.76-11.264t-88.064-74.752q-12.288-39.936-13.312-70.656t16.384-66.56q13.312-27.648 40.448-51.712t62.464-38.912 75.264-17.408 78.848 12.8zM361.472 764.928q37.888 3.072 57.856-18.432t21.504-48.128-15.36-47.616-52.736-16.896q-27.648 3.072-43.008 23.552t-17.408 43.52 9.728 42.496 39.424 21.504zM780.288 6.144q74.752 0 139.776 19.968t113.664 57.856 76.288 92.16 27.648 122.88q0 33.792-16.384 50.688t-35.328 17.408-35.328-14.336-16.384-45.568q0-40.96-22.528-77.824t-59.392-64.512-84.48-43.52-96.768-15.872q-31.744 0-47.104-15.36t-14.336-34.304 18.944-34.304 51.712-15.36zM780.288 169.984q95.232 0 144.384 48.64t49.152 146.944q0 30.72-10.24 43.52t-22.528 11.264-22.528-14.848-10.24-35.84q0-60.416-34.816-96.256t-93.184-35.84q-19.456 0-28.672-10.752t-9.216-23.04 9.728-23.04 28.16-10.752z"/></svg>
+    </a>
+    
+    
+    <a class="social-link" title="github" href="https://github.com/zhoukanz" target="_blank" rel="noopener">
+        <svg viewbox="0 0 1049 1024" xmlns="http://www.w3.org/2000/svg"><path d="M524.979332 0C234.676191 0 0 234.676191 0 524.979332c0 232.068678 150.366597 428.501342 358.967656 498.035028 26.075132 5.215026 35.636014-11.299224 35.636014-25.205961 0-12.168395-0.869171-53.888607-0.869171-97.347161-146.020741 31.290159-176.441729-62.580318-176.441729-62.580318-23.467619-60.841976-58.234462-76.487055-58.234463-76.487055-47.804409-32.15933 3.476684-32.15933 3.476685-32.15933 53.019436 3.476684 80.83291 53.888607 80.83291 53.888607 46.935238 79.963739 122.553122 57.365291 152.97411 43.458554 4.345855-33.897672 18.252593-57.365291 33.028501-70.402857-116.468925-12.168395-239.022047-57.365291-239.022047-259.012982 0-57.365291 20.860106-104.300529 53.888607-140.805715-5.215026-13.037566-23.467619-66.926173 5.215027-139.067372 0 0 44.327725-13.906737 144.282399 53.888607 41.720212-11.299224 86.917108-17.383422 131.244833-17.383422s89.524621 6.084198 131.244833 17.383422C756.178839 203.386032 800.506564 217.29277 800.506564 217.29277c28.682646 72.1412 10.430053 126.029806 5.215026 139.067372 33.897672 36.505185 53.888607 83.440424 53.888607 140.805715 0 201.64769-122.553122 245.975415-239.891218 259.012982 19.121764 16.514251 35.636014 47.804409 35.636015 97.347161 0 70.402857-0.869171 126.898978-0.869172 144.282399 0 13.906737 9.560882 30.420988 35.636015 25.205961 208.601059-69.533686 358.967656-265.96635 358.967655-498.035028C1049.958663 234.676191 814.413301 0 524.979332 0z"/></svg>
+    </a>
+    
+    
+    
+    
+    
+    
+</div>
+    </div>
+</nav>
+    </div>
+</header>
+
+
+<main id="site-main" class="site-main outer" role="main">
+    <div class="inner">
+        <header class="post-full-header">
+            <section class="post-full-meta">
+                <time class="post-full-meta-date" datetime="2018-12-26T09:05:12.066Z" itemprop="datePublished">
+                    2018-12-26
+                </time>
+                
+                <span class="date-divider">/</span>
+                
+                
+            </section>
+            <h1 class="post-full-title"></h1>
+        </header>
+        <article class="post-full no-image">
+            
+            <section class="post-full-content">
+                <div id="lightgallery" class="markdown-body">
+                    <h2 id="java-8-Lambda表达式"><a href="#java-8-Lambda表达式" class="headerlink" title="java 8 Lambda表达式"></a>java 8 Lambda表达式</h2><h3 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h3><p>本篇文章主要是RxJava官方文档的辅料，里面太多的Lambda表达式，没有一些了解的确难以看懂，因为是主要的重心还是落在RxJava上，所以本文概述一下如何在Android Studio中使用以及各个表达式的意思，还有与Rxjava及其相似的stream。<a href="http://www.oracle.com/webfolder/technetwork/tutorials/obe/java/Lambda-QuickStart/index.html#" target="_blank" rel="noopener">官方文档</a>如何描述Lambda表达式：</p>
+<blockquote>
+<p> Lambda expressions are a new and important feature included in Java SE 8. They provide a clear and concise way to represent one method interface using an expression. Lambda expressions also improve the Collection libraries making it easier to iterate through, filter, and extract data from a Collection. In addition, new concurrency features improve performance in multicore environments.</p>
+</blockquote>
+<p>这段话指出了在java8中lambda表达式三个主要的作用：简洁的方式呈现接口；提高集合迭代，过滤和扩展的性能；提高多核环境下并发的性能。具体的翻译还是大家自行去理解，中英转换肯定会出现一定的偏差。</p>
+<h3 id="软硬件环境"><a href="#软硬件环境" class="headerlink" title="软硬件环境"></a>软硬件环境</h3><ul>
+<li>JDK 8</li>
+<li>NetBeans 7.4 （这个只是IDE 在Android Studio中同样是可以使用的）</li>
+</ul>
+<h2 id="Lambda应用在那些场景呢？因为不知道怎么翻译合适就直接上英语了"><a href="#Lambda应用在那些场景呢？因为不知道怎么翻译合适就直接上英语了" class="headerlink" title="Lambda应用在那些场景呢？因为不知道怎么翻译合适就直接上英语了."></a>Lambda应用在那些场景呢？因为不知道怎么翻译合适就直接上英语了.</h2><h4 id="Anonymous-Inner-Class"><a href="#Anonymous-Inner-Class" class="headerlink" title="Anonymous Inner Class"></a>Anonymous Inner Class</h4><p> 匿名内部类，用过java的人这个应该都知道就不再赘述</p>
+<pre><code>// 匿名内部类
+JButton jb1 = new JButton();
+jb1.addActionListener(new ActionListener() {
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        System.out.println(&quot;xxx&quot;);
+    }
+});
+
+// lambda表达式的方式
+JButton jb = new JButton();
+jb.addActionListener((e) -&gt; System.out.println());
+</code></pre><h4 id="Functional-Interface"><a href="#Functional-Interface" class="headerlink" title="Functional Interface"></a>Functional Interface</h4><p>在java中，一个interface里面只有一个需要实现的方法，这种形式的接口就被称作为Functional Interface,也被叫做SAM.(Single Abstract Method)<br>    public interface ActionListener extends EventListener {</p>
+<pre><code>    /**
+     * Invoked when an action occurs.
+     */
+    public void actionPerformed(ActionEvent e);
+
+}
+</code></pre><h4 id="Lambda-Expression-Syntax"><a href="#Lambda-Expression-Syntax" class="headerlink" title="Lambda Expression Syntax"></a>Lambda Expression Syntax</h4><p> λ表达式的语法，通常λ表达式可以将5行代码，转换成一行代码来表示，上面的匿名内部类便是例子，λ表达式的语法由如下三个部分组成：</p>
+<table>
+<thead>
+<tr>
+<th>参数列表</th>
+<th style="text-align:left">箭头</th>
+<th style="text-align:left">方法体</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>（int x,int y）</td>
+<td style="text-align:left">-&gt;</td>
+<td style="text-align:left">x + y</td>
+</tr>
+</tbody>
+</table>
+<h2 id="lambda表达式实例"><a href="#lambda表达式实例" class="headerlink" title="lambda表达式实例"></a>lambda表达式实例</h2><h4 id="Listener-Lambda"><a href="#Listener-Lambda" class="headerlink" title="Listener Lambda"></a>Listener Lambda</h4><pre><code>private static void listenerLambda() {
+    //        Listener Lambda
+    JButton jb1 = new JButton();
+    jb1.addActionListener(new ActionListener() {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            System.out.println(&quot;xxx&quot;);
+        }
+    });
+
+    // lambda表达式的方式
+    JButton jb = new JButton();
+    jb.addActionListener((e) -&gt; System.out.println());
+}
+</code></pre><h4 id="Comparator-Lambda"><a href="#Comparator-Lambda" class="headerlink" title="Comparator Lambda"></a>Comparator Lambda</h4><pre><code>private static void compatorLambda() {
+    // sort with inner class
+    List&lt;Person&gt; personList = new ArrayList&lt;&gt;();
+    personList.add(new Person(&quot;zk&quot;));
+    personList.add(new Person(&quot;ak&quot;));
+
+
+    System.out.println(&quot;sort with inner class&quot;);
+    Collections.sort(personList, new Comparator&lt;Person&gt;() {
+        @Override
+        public int compare(Person o1, Person o2) {
+            // 按照字典序排列 person
+            return o1.getSurName().compareTo(o2.getSurName());
+        }
+    });
+
+    for (Person p:
+            personList) {
+        System.out.println(p.getSurName());
+    }
+
+
+    System.out.println(&quot;sort with lambda&quot;);
+    // sort with lambda
+    Collections.sort(personList, (p1,p2)-&gt;p1.getSurName().compareTo(p2.getSurName()));
+    for (Person p:
+            personList) {
+        System.out.println(p.getSurName());
+    }
+}
+</code></pre><h4 id="Runnable-Lambda"><a href="#Runnable-Lambda" class="headerlink" title="Runnable Lambda"></a>Runnable Lambda</h4><pre><code>private static void runnableLambda() {
+    // 传统模式
+    Runnable r1 = new Runnable() {
+        @Override
+        public void run() {
+            System.out.println(&quot;Tran  A&quot;);
+            System.out.println(&quot;Tran  B&quot;);
+        }
+    };
+
+    // lambda
+    Runnable r2 = () -&gt; System.out.print(&quot;Lambda  A&quot;);
+    System.out.print(&quot;Lambda  B&quot;);
+
+    r1.run();
+    r2.run();
+}
+</code></pre><h2 id="Improving-Code-with-Lambda-Expression"><a href="#Improving-Code-with-Lambda-Expression" class="headerlink" title="Improving Code with Lambda Expression"></a>Improving Code with Lambda Expression</h2><p> 使用Lambda优化代码。代码优化这件事可轻可重，像我写代码的主要目的就是奔着功能去，一往无前，有bug回头改,往往都是一去不返。代码优化有很多方面，像6大设计原则，23种设计模式等等，今天得例子要验证得Principle叫做 — ‘Don’t Repeat Yourself ‘ 简称 (DRY)，不得不说所有得原则全称都不如简称有格调。</p>
+<p> 那下面我们就来验证一下lambda相对于原有得做法到底 DRY 在哪里：</p>
+<blockquote>
+<p>1.场景 </p>
+</blockquote>
+<p> 有一群人来面试,只招聘司机、应征入伍、飞行员，面试得条件如下：</p>
+<pre><code>司机 ： 年纪超过16
+入伍 ： 男性年龄在18-25之间
+飞行员：年龄在23 到 65之间
+</code></pre><p> Person 字段 </p>
+<pre><code>public class Person {
+private String givenName;
+private String surName;
+private int age;
+private Gender gender;
+private String eMail;
+private String phone;
+private String address;    
+</code></pre><blockquote>
+<p>2.创建person List</p>
+</blockquote>
+<p>   怎么创建比较随意，我这里就按照官网得方式来创建（在上一篇RxJava中有关于设计模式得附录）</p>
+<pre><code>   public static List&lt;Person&gt; createShortList() {
+    List&lt;Person&gt; people = new ArrayList&lt;&gt;();
+    people.add(
+            new Person.Builder().
+                    givenName(&quot;Bob&quot;)
+                    .surName(&quot;Baker&quot;)
+                    .age(21)
+                    .gender(Gender.MALE)
+                    .email(&quot;bob.baker@example.com&quot;)
+                    .phoneNumber(&quot;201-121-4678&quot;)
+                    .address(&quot;44 4th St, Smallville, KS 12333&quot;)
+                    .build()
+    );
+    people.add(
+            new Person.Builder()
+                    .givenName(&quot;Jane&quot;)
+                    .surName(&quot;Doe&quot;)
+                    .age(25)
+                    .gender(Gender.FEMALE)
+                    .email(&quot;jane.doe@example.com&quot;)
+                    .phoneNumber(&quot;202-123-4678&quot;)
+                    .address(&quot;33 3rd St, Smallville, KS 12333&quot;)
+                    .build()
+    );
+    people.add(
+            new Person.Builder()
+                    .givenName(&quot;John&quot;)
+                    .surName(&quot;Doe&quot;)
+                    .age(25)
+                    .gender(Gender.MALE)
+                    .email(&quot;john.doe@example.com&quot;)
+                    .phoneNumber(&quot;202-123-4678&quot;)
+                    .address(&quot;33 3rd St, Smallville, KS 12333&quot;)
+                    .build()
+    );
+
+    return people;
+}
+</code></pre><blockquote>
+<p>3.选出你所要挑选的满足条件的人</p>
+</blockquote>
+<pre><code>public class RoboContactMethods {
+
+    public void callDrivers(List&lt;Person&gt; pl) {
+        for (Person p : pl) {
+            if (p.getAge() &gt;= 16) {
+                roboCall(p);
+            }
+        }
+    }
+
+    public void emailDraftees(List&lt;Person&gt; pl) {
+        for (Person p : pl) {
+            if (p.getAge() &gt;= 18 &amp;&amp; p.getAge() &lt;= 25 &amp;&amp; p.getGender() == Gender.MALE) {
+                roboEmail(p);
+            }
+        }
+    }
+
+    public void mailPilots(List&lt;Person&gt; pl) {
+        for (Person p : pl) {
+            if (p.getAge() &gt;= 23 &amp;&amp; p.getAge() &lt;= 65) {
+                roboMail(p);
+            }
+        }
+    }
+
+    public void roboCall(Person p) {
+        System.out.println(&quot;Calling &quot; + p.getGivenName() + &quot; &quot; + p.getSurName() + &quot; age &quot; + p.getAge() + &quot; at &quot; + p.getPhone());
+    }
+
+    public void roboEmail(Person p) {
+        System.out.println(&quot;EMailing &quot; + p.getGivenName() + &quot; &quot; + p.getSurName() + &quot; age &quot; + p.getAge() + &quot; at &quot; + p.geteMail());
+    }
+
+    public void roboMail(Person p) {
+        System.out.println(&quot;Mailing &quot; + p.getGivenName() + &quot; &quot; + p.getSurName() + &quot; age &quot; + p.getAge() + &quot; at &quot; + p.getAddress());
+    }
+
+}
+</code></pre><p>我看这段代码是没问题的，for循环迭代选出满足条件的人，完全没毛病；那我们来看看官方的犊子是怎么演的。</p>
+<ul>
+<li>没有遵循DRY原则<ul>
+<li>每个方法的选择条件必须重写</li>
+<li>每个方法都重复循环</li>
+</ul>
+</li>
+<li>需要大量方法来实现每个用例</li>
+<li>上述代码不灵活，如果招聘条件发生变化，那么将引起大量的更改，可维护性不强</li>
+</ul>
+<blockquote>
+<p>4.第一次重构</p>
+</blockquote>
+<p> 这次我们将上述的几个问题列入考虑，其实，我感觉我的翻译貌似出了点小差错，或者是我没明白他是什么意思，除了最后一项可以理解之外，其他的情况没弄懂是什么意思，再或者是本身语言的限制只能优化最后一项，那么下面看看，该如何重构。</p>
+<pre><code>public class RoboContactMethods2 {
+
+
+public void callDrivers(List&lt;Person&gt; pl) {
+    for (Person p : pl) {
+        if (isDriver(p)) {
+            roboCall(p);
+        }
+    }
+}
+
+public void emailDraftees(List&lt;Person&gt; pl) {
+    for (Person p : pl) {
+        if (isDraftee(p)) {
+            roboEmail(p);
+        }
+    }
+}
+
+public void mailPilots(List&lt;Person&gt; pl) {
+    for (Person p : pl) {
+        if (isPilot(p)) {
+            roboMail(p);
+        }
+    }
+}
+
+public boolean isDriver(Person p) {
+    return p.getAge() &gt;= 16;
+}
+
+public boolean isDraftee(Person p) {
+    return p.getAge() &gt;= 18 &amp;&amp; p.getAge() &lt;= 25 &amp;&amp; p.getGender() == Gender.MALE;
+}
+
+public boolean isPilot(Person p) {
+    return p.getAge() &gt;= 23 &amp;&amp; p.getAge() &lt;= 65;
+}
+
+public void roboCall(Person p) {
+    System.out.println(&quot;Calling &quot; + p.getGivenName() + &quot; &quot; + p.getSurName() + &quot; age &quot; + p.getAge() + &quot; at &quot; + p.getPhone());
+}
+
+public void roboEmail(Person p) {
+    System.out.println(&quot;EMailing &quot; + p.getGivenName() + &quot; &quot; + p.getSurName() + &quot; age &quot; + p.getAge() + &quot; at &quot; + p.geteMail());
+}
+
+public void roboMail(Person p) {
+    System.out.println(&quot;Mailing &quot; + p.getGivenName() + &quot; &quot; + p.getSurName() + &quot; age &quot; + p.getAge() + &quot; at &quot; + p.getAddress());
+}
+</code></pre><p>}</p>
+<p> 搜索条件被封装进方法中，较之前的代码而言确实有一定的提升，条件可以被反复利用并且可以更方便的更改。但是，还是有很多重复的地方，是不是没有更好的办法呢？（······肯定是有的，要不我说个球）</p>
+<p> 在使用lambda之前先看看还有什么能改进的或者是为lambda做一些铺垫。上述的代码，其实并不符合开闭原则（OCP – 原则上对修改关闭，对扩展开放），这段程序可能发生改变是招聘条件，那么我们让调用程序自己去维护，就更进一步的优化了。</p>
+<p> 将条件抽象成接口，让调用者自己去维护，接口如下：</p>
+<pre><code>public interface MyTest&lt;T&gt; {
+  public boolean test(T t);
+}
+</code></pre><blockquote>
+<p>RoboContactsAnon.java</p>
+</blockquote>
+<pre><code>  package com.example.lambda;
+  import java.util.List;
+  import java.util.function.Predicate;
+
+/**
+ * @author MikeW
+ */
+public class RoboContactsAnon {
+    public void phoneContacts(List&lt;Person&gt; pl, MyTest&lt;Person&gt; pred) {
+        for (Person p : pl) {
+            if (pred.test(p)) {
+                roboCall(p);
+            }
+        }
+    }
+
+    public void emailContacts(List&lt;Person&gt; pl, MyTest&lt;Person&gt; pred) {
+        for (Person p : pl) {
+            if (pred.test(p)) {
+                roboEmail(p);
+            }
+        }
+    }
+
+    public void mailContacts(List&lt;Person&gt; pl, MyTest&lt;Person&gt; pred) {
+        for (Person p : pl) {
+            if (pred.test(p)) {
+                roboMail(p);
+            }
+        }
+    }
+
+    public void roboCall(Person p) {
+        System.out.println(&quot;Calling &quot; + p.getGivenName() + &quot; &quot; + p.getSurName() + &quot; age &quot; + p.getAge() + &quot; at &quot; + p.getPhone());
+    }
+
+    public void roboEmail(Person p) {
+        System.out.println(&quot;EMailing &quot; + p.getGivenName() + &quot; &quot; + p.getSurName() + &quot; age &quot; + p.getAge() + &quot; at &quot; + p.getEmail());
+    }
+
+    public void roboMail(Person p) {
+        System.out.println(&quot;Mailing &quot; + p.getGivenName() + &quot; &quot; + p.getSurName() + &quot; age &quot; + p.getAge() + &quot; at &quot; + p.getAddress());
+    }
+}
+</code></pre><blockquote>
+<p>RoboCallTest03.java 调用程序</p>
+</blockquote>
+<pre><code>public class RoboCallTest03 {
+
+    public static void main(String[] args) {
+
+      List&lt;Person&gt; pl = Person.createShortList();
+      RoboContactsAnon robo = new RoboContactsAnon();
+
+      System.out.println(&quot;\n==== Test 03 ====&quot;);
+      System.out.println(&quot;\n=== Calling all Drivers ===&quot;);
+      robo.phoneContacts(pl,
+          new MyTest&lt;Person&gt;(){
+            @Override
+            public boolean test(Person p){
+              return p.getAge() &gt;=16;
+            }
+          }
+      );
+
+      System.out.println(&quot;\n=== Emailing all Draftees ===&quot;);
+      robo.emailContacts(pl,
+          new MyTest&lt;Person&gt;(){
+            @Override
+            public boolean test(Person p){
+              return p.getAge() &gt;= 18 &amp;&amp; p.getAge() &lt;= 25 &amp;&amp; p.getGender() == Gender.MALE;
+            }
+          }
+      );
+
+
+      System.out.println(&quot;\n=== Mail all Pilots ===&quot;);
+      robo.mailContacts(pl,
+          new MyTest&lt;Person&gt;(){
+            @Override
+            public boolean test(Person p){
+              return p.getAge() &gt;= 23 &amp;&amp; p.getAge() &lt;= 65;
+            }
+          }
+      );
+     }
+}
+</code></pre><p>  仅通过java8之前得方式，程序看起来已经符合OCP的原则；在前面提到过SAM这种形式是可以用，lambda来表示的。那么看看如何去用lambda,来进一步的优化上面的程序</p>
+<blockquote>
+<p>lambda 优化</p>
+</blockquote>
+<p> 在java.util.function包中提供了一种形式类似的MyTest的接口，Predicate<t>；</t></p>
+<pre><code>public interface Predicate&lt;T&gt; {
+  public boolean test(T t);
+}
+</code></pre><blockquote>
+<p>RoboContactsLambda.java</p>
+</blockquote>
+<pre><code>package com.example.lambda;
+import java.util.List;
+import java.util.function.Predicate;
+
+/**
+ * @authorzhoukan
+ */
+public class RoboContactLambda {
+    public void phoneContacts(List&lt;Person&gt; pl, Predicate&lt;Person&gt; pred) {
+        for (Person p : pl) {
+            if (pred.test(p)) {
+                roboCall(p);
+            }
+        }
+    }
+
+    public void emailContacts(List&lt;Person&gt; pl, Predicate&lt;Person&gt; pred) {
+        for (Person p : pl) {
+            if (pred.test(p)) {
+                roboEmail(p);
+            }
+        }
+    }
+
+    public void mailContacts(List&lt;Person&gt; pl, Predicate&lt;Person&gt; pred) {
+        for (Person p : pl) {
+            if (pred.test(p)) {
+                roboMail(p);
+            }
+        }
+    }
+
+    public void roboCall(Person p) {
+        System.out.println(&quot;Calling &quot; + p.getGivenName() + &quot; &quot; + p.getSurName() + &quot; age &quot; + p.getAge() + &quot; at &quot; + p.getPhone());
+    }
+
+    public void roboEmail(Person p) {
+        System.out.println(&quot;EMailing &quot; + p.getGivenName() + &quot; &quot; + p.getSurName() + &quot; age &quot; + p.getAge() + &quot; at &quot; + p.getEmail());
+    }
+
+    public void roboMail(Person p) {
+        System.out.println(&quot;Mailing &quot; + p.getGivenName() + &quot; &quot; + p.getSurName() + &quot; age &quot; + p.getAge() + &quot; at &quot; + p.getAddress());
+    }
+}
+</code></pre><p> Mytest接口被更换成了Predicate,调用程序的代码片段如下</p>
+<pre><code>public static void main(String[] args){ 
+
+     List&lt;Person&gt; pl = Person.createShortList();
+     RoboContactLambda robo = new RoboContactLambda();
+
+     Predicate&lt;Person&gt; allDrivers = p -&gt; p.getAge() &gt;= 16;
+     robo.phoneContacts(pl, allDrivers);
+}
+</code></pre><p> 当然即使不适用util.function提供的接口，也是可以实现了，只要满足lambda表达式的场景就好：</p>
+<pre><code>   robo.mailContacts(pl,
+  /*new MyTest&lt;Person&gt;(){
+    @Override
+    public boolean test(Person p){
+      return p.getAge() &gt;= 23 &amp;&amp; p.getAge() &lt;= 65;
+    }
+  }*/
+        (p) -&gt; p.getAge() &gt; 23 &amp;&amp; p.getAge() &lt;= 65
+);
+</code></pre><h2 id="The-java-util-function-包"><a href="#The-java-util-function-包" class="headerlink" title="The java.util.function 包"></a>The java.util.function 包</h2><p> function包提供了几种方便去使用lambda的interface，当然不仅仅是给lambda表达式使用，所有诸如上述的优化都是可以考虑用这些方法的，确实我看到这里就有点抑制不住内心的小狂喜，lambda的这些function不就是Rxjava中常用的操作符嘛，这么麻烦的工作算是没白做，就下面的需求，我们来体验一下她的魅力。</p>
+<ul>
+<li>Predicate: A property of the object passed as argument</li>
+<li>Consumer: An action to be performed with the object passed as argument</li>
+<li>Function: Transform a T to a U</li>
+<li>Supplier: Provide an instance of a T (such as a factory)</li>
+<li>UnaryOperator: A unary operator from T -&gt; T</li>
+<li>BinaryOperator: A binary operator from (T, T) -&gt; T</li>
+</ul>
+<blockquote>
+<p>输出东方人和西方人的信息</p>
+</blockquote>
+<p>  上面的personList（求职者），要将他们的信息分别发给，老板和老板娘，他们一个是中国人，一个是美国人；由于习惯不同，西方习惯姓在后名在前（分别对应Given name 和 surname），中国的习惯我就不提了。</p>
+<h4 id="传统的方式"><a href="#传统的方式" class="headerlink" title="传统的方式"></a>传统的方式</h4><p>  person.java</p>
+<pre><code>   public void printWesternName() {
+
+    System.out.println(&quot;\nName: &quot; + this.getGivenName() + &quot; &quot; + this.getSurName() + &quot;\n&quot; +
+            &quot;Age: &quot; + this.getAge() + &quot;  &quot; + &quot;Gender: &quot; + this.getGender() + &quot;\n&quot; +
+            &quot;EMail: &quot; + this.geteMail() + &quot;\n&quot; +
+            &quot;Phone: &quot; + this.getPhone() + &quot;\n&quot; +
+            &quot;Address: &quot; + this.getAddress());
+}
+
+
+public void printEasternName() {
+
+    System.out.println(&quot;\nName: &quot; + this.getSurName() + &quot; &quot; + this.getGivenName() + &quot;\n&quot; +
+            &quot;Age: &quot; + this.getAge() + &quot;  &quot; + &quot;Gender: &quot; + this.getGender() + &quot;\n&quot; +
+            &quot;EMail: &quot; + this.geteMail() + &quot;\n&quot; +
+            &quot;Phone: &quot; + this.getPhone() + &quot;\n&quot; +
+            &quot;Address: &quot; + this.getAddress());
+}  
+</code></pre><h4 id="使用Function-Interface的方式"><a href="#使用Function-Interface的方式" class="headerlink" title="使用Function Interface的方式"></a>使用Function Interface的方式</h4><pre><code> public interface Function&lt;R,T&gt;{
+    public R apply(T t);
+}
+</code></pre><p>  指定两个泛型以T作为输入，R作为输出，那么对于上述场景而言 -&gt; Function&lt;string,person&gt;，用function来更灵活的实现打印方法：</p>
+<p>  Person.java</p>
+<pre><code>public String printCustom(Function &lt;Person, String&gt; f){
+      return f.apply(this);
+}
+</code></pre><blockquote>
+<p>调用程序 NameTestNew.java</p>
+</blockquote>
+<pre><code>  public class NameTestNew {
+    public static void main(String[] args) {
+
+        System.out.println(&quot;\n==== NameTestNew02 ===&quot;);
+
+        List&lt;Person&gt; list1 = Person.createShortList();
+
+        // Print Custom First Name and e-mail
+        System.out.println(&quot;===Custom List===&quot;);
+        for (Person person : list1) {
+            System.out.println(
+                    person.printCustom(p -&gt; &quot;Name: &quot; + p.getGivenName() + &quot; EMail: &quot; + p.getEmail())
+            );
+        }
+
+
+        // Define Western and Eastern Lambdas
+
+        Function&lt;Person, String&gt; westernStyle = p -&gt; {
+            return &quot;\nName: &quot; + p.getGivenName() + &quot; &quot; + p.getSurName() + &quot;\n&quot; +
+                    &quot;Age: &quot; + p.getAge() + &quot;  &quot; + &quot;Gender: &quot; + p.getGender() + &quot;\n&quot; +
+                    &quot;EMail: &quot; + p.getEmail() + &quot;\n&quot; +
+                    &quot;Phone: &quot; + p.getPhone() + &quot;\n&quot; +
+                    &quot;Address: &quot; + p.getAddress();
+        };
+
+        Function&lt;Person, String&gt; easternStyle = p -&gt; &quot;\nName: &quot; + p.getSurName() + &quot; &quot;
+                + p.getGivenName() + &quot;\n&quot; + &quot;Age: &quot; + p.getAge() + &quot;  &quot; +
+                &quot;Gender: &quot; + p.getGender() + &quot;\n&quot; +
+                &quot;EMail: &quot; + p.getEmail() + &quot;\n&quot; +
+                &quot;Phone: &quot; + p.getPhone() + &quot;\n&quot; +
+                &quot;Address: &quot; + p.getAddress();
+
+        // Print Western List
+        System.out.println(&quot;\n===Western List===&quot;);
+        for (Person person : list1) {
+            System.out.println(
+                    person.printCustom(westernStyle)
+            );
+        }
+
+        // Print Eastern List
+        System.out.println(&quot;\n===Eastern List===&quot;);
+        for (Person person : list1) {
+            System.out.println(
+                    person.printCustom(easternStyle)
+            );
+        }
+
+
+    }
+} 
+</code></pre><p> 第一次循环只输出了名和email,所有有效的表达式都能作为printCustom的参数；第二次，首先将东方人和西方人的输出方式定义为Fucntion，并当作参数传入printCustom中。lambda表达式利于扩展和反复利用的优势得以体现。</p>
+<h4 id="输出"><a href="#输出" class="headerlink" title="输出"></a>输出</h4><pre><code>==== NameTestNew02 ===
+===Custom List===
+Name: Bob EMail: bob.baker@example.com
+Name: Jane EMail: jane.doe@example.com
+Name: John EMail: john.doe@example.com
+Name: James EMail: james.johnson@example.com
+Name: Joe EMail: joebob.bailey@example.com
+Name: Phil EMail: phil.smith@examp;e.com
+Name: Betty EMail: betty.jones@example.com
+
+===Western List===
+
+Name: Bob Baker
+Age: 21  Gender: MALE
+EMail: bob.baker@example.com
+Phone: 201-121-4678
+Address: 44 4th St, Smallville, KS 12333
+
+Name: Jane Doe
+Age: 25  Gender: FEMALE
+EMail: jane.doe@example.com
+Phone: 202-123-4678
+Address: 33 3rd St, Smallville, KS 12333
+
+Name: John Doe
+Age: 25  Gender: MALE
+EMail: john.doe@example.com
+Phone: 202-123-4678
+Address: 33 3rd St, Smallville, KS 12333
+
+Name: James Johnson
+Age: 45  Gender: MALE
+EMail: james.johnson@example.com
+Phone: 333-456-1233
+Address: 201 2nd St, New York, NY 12111
+
+Name: Joe Bailey
+Age: 67  Gender: MALE
+EMail: joebob.bailey@example.com
+Phone: 112-111-1111
+Address: 111 1st St, Town, CA 11111
+
+Name: Phil Smith
+Age: 55  Gender: MALE
+EMail: phil.smith@examp;e.com
+Phone: 222-33-1234
+Address: 22 2nd St, New Park, CO 222333
+
+Name: Betty Jones
+Age: 85  Gender: FEMALE
+EMail: betty.jones@example.com
+Phone: 211-33-1234
+Address: 22 4th St, New Park, CO 222333
+
+===Eastern List===
+
+Name: Baker Bob
+Age: 21  Gender: MALE
+EMail: bob.baker@example.com
+Phone: 201-121-4678
+Address: 44 4th St, Smallville, KS 12333
+
+Name: Doe Jane
+Age: 25  Gender: FEMALE
+EMail: jane.doe@example.com
+Phone: 202-123-4678
+Address: 33 3rd St, Smallville, KS 12333
+
+Name: Doe John
+Age: 25  Gender: MALE
+EMail: john.doe@example.com
+Phone: 202-123-4678
+Address: 33 3rd St, Smallville, KS 12333
+
+Name: Johnson James
+Age: 45  Gender: MALE
+EMail: james.johnson@example.com
+Phone: 333-456-1233
+Address: 201 2nd St, New York, NY 12111
+
+Name: Bailey Joe
+Age: 67  Gender: MALE
+EMail: joebob.bailey@example.com
+Phone: 112-111-1111
+Address: 111 1st St, Town, CA 11111
+
+Name: Smith Phil
+Age: 55  Gender: MALE
+EMail: phil.smith@examp;e.com
+Phone: 222-33-1234
+Address: 22 2nd St, New Park, CO 222333
+
+Name: Jones Betty
+Age: 85  Gender: FEMALE
+EMail: betty.jones@example.com
+Phone: 211-33-1234
+Address: 22 4th St, New Park, CO 222333
+</code></pre><h2 id="lambda表达式和集合"><a href="#lambda表达式和集合" class="headerlink" title="lambda表达式和集合"></a>lambda表达式和集合</h2><p> 体验过Function接口的优点还没完，java 8给我们的惊喜还不止这些。（不这些都不够，我必须是你近旁的一只木棉，根紧握地里，也相触云间 … 神特么的乱入），lambda基础部分结束后，来看看在集合方面它又有哪些优势。</p>
+<p> 先看看有哪些不一样的操作符：</p>
+<ul>
+<li>forEach</li>
+<li>stream</li>
+<li>filter</li>
+<li>collection</li>
+<li>map</li>
+</ul>
+<blockquote>
+<p>1.添加新的类，将查询条件全部封装进HashMap中<br></p>
+</blockquote>
+<pre><code>public class SearchCriteria {
+
+    private final Map&lt;String, MyTest&lt;Person&gt;&gt; searchMap = new HashMap&lt;&gt;();
+
+    private SearchCriteria() {
+        super();
+        initSearchMap();
+    }
+
+    private void initSearchMap() {
+        MyTest&lt;Person&gt; allDrivers = p -&gt; p.getAge() &gt;= 16;
+        MyTest&lt;Person&gt; allDraftees = p -&gt; p.getAge() &gt;= 18 &amp;&amp; p.getAge() &lt;= 25 &amp;&amp; p.getGender() == Gender.MALE;
+        MyTest&lt;Person&gt; allPilots = p -&gt; p.getAge() &gt;= 23 &amp;&amp; p.getAge() &lt;= 65;
+
+        searchMap.put(&quot;allDrivers&quot;, allDrivers);
+        searchMap.put(&quot;allDraftees&quot;, allDraftees);
+        searchMap.put(&quot;allPilots&quot;, allPilots);
+
+    }
+
+    public MyTest&lt;Person&gt; getCriteria(String PredicateName) {
+        MyTest&lt;Person&gt; target;
+
+        target = searchMap.get(PredicateName);
+
+        if (target == null) {
+
+            System.out.println(&quot;Search Criteria not found... &quot;);
+            System.exit(1);
+
+        }
+
+        return target;
+
+    }
+
+    public static SearchCriteria getInstance() {
+        return new SearchCriteria();
+    }
+
+}
+</code></pre><blockquote>
+<p>2.Looping<br></p>
+</blockquote>
+<blockquote>
+<p>Test01ForEach.java</p>
+</blockquote>
+<pre><code>public static void main(String[] args) {
+
+    List&lt;Person&gt; pl = Person.createShortList();
+
+    System.out.println(&quot;\n=== Western Phone List ===&quot;);
+    pl.forEach(p -&gt; p.printWesternName());
+
+    System.out.println(&quot;\n=== Eastern Phone List ===&quot;);
+    pl.forEach(Person::printEasternName);
+
+    System.out.println(&quot;\n=== Custom Phone List ===&quot;);
+    pl.forEach(p -&gt; {
+        System.out.println(p.printCustom(r -&gt; &quot;Name: &quot; + r.getGivenName() + &quot; EMail: &quot; + r.getEmail()));
+    });
+
+}
+</code></pre><blockquote>
+<p>3.链式调用和过滤器<br></p>
+</blockquote>
+<blockquote>
+<p>Test02Filter.java<br>    public class Test02Filter {</p>
+</blockquote>
+<pre><code>    public static void main(String[] args) {
+
+        List&lt;Person&gt; pl = Person.createShortList();
+
+        SearchCriteria search = SearchCriteria.getInstance();
+
+        System.out.println(&quot;\n=== Western Pilot Phone List ===&quot;);
+
+        pl.stream().filter(search.getCriteria(&quot;allPilots&quot;))
+                .forEach(Person::printWesternName);
+
+
+        System.out.println(&quot;\n=== Eastern Draftee Phone List ===&quot;);
+
+        pl.stream().filter(search.getCriteria(&quot;allDraftees&quot;))
+                .forEach(Person::printEasternName);
+
+    }
+
+}
+</code></pre><blockquote>
+<p>4.getting Lazy<br></p>
+</blockquote>
+<p>  由于篇幅过长，写的有点疲惫，细枝末节的地方，可能没描述清楚，留言里面见；当然这个getting lazy说的并不是我懒</p>
+<ul>
+<li>Laziness：跟java-web的懒加载类似的概念，在前面程序中，循环就采取了了‘lazy’的方式，在filter之后再进行输出，这是一种更为高效的方式</li>
+<li>Eagerness:Code that performs operations on every object in a list is considered “eager”. For example, an enhanced for loop that iterates through an entire list to process two objects, is considered a more “eager” approach.（ps : 直接给原文了）</li>
+</ul>
+<h4 id="stream"><a href="#stream" class="headerlink" title="stream"></a>stream</h4><p>在上面的代码中，filter之前都会先使用stream,stream方法会将Collection作为输入，返回java.util.stream.Stream接口作为输出。Stream就是集合中元素的序列；默认情况下，一旦元素被调用在stream中将不再有该元素，类似于java中的queuen,因此，每个stream只能被使用一次；另外，stream能变成一个序列在该方法调用之后，后文的例子将印证这一点。</p>
+<blockquote>
+<p>转化和结果</p>
+</blockquote>
+<p> 当stream被使用之后被处理，所以在stream中的元素，是无法发生更改；那么如果你还是想在链式操作之后保留stream对应的collection:可以将他们保留在一个新的集合中SHOW CODE :</p>
+<blockquote>
+<p>Test03toList.java</p>
+</blockquote>
+<pre><code>public class Test03toList {
+
+public static void main(String[] args) {
+
+         List&lt;Person&gt; pl = Person.createShortList();
+
+         SearchCriteria search = SearchCriteria.getInstance();
+
+         // Make a new list after filtering.
+         List&lt;Person&gt; pilotList = pl
+                 .stream()
+                 .filter(search.getCriteria(&quot;allPilots&quot;))
+                 .collect(Collectors.toList());
+
+         System.out.println(&quot;\n=== Western Pilot Phone List ===&quot;);
+         pilotList.forEach(Person::printWesternName);
+
+       }
+
+}
+</code></pre><p> .collect(Collectors.toList()); 返回一个新的collection</p>
+<blockquote>
+<p>集合中的计算</p>
+</blockquote>
+<p> map()通常和filter成对出现，map会从对象里抽出某个属性，来执行一些操作，下面的例子以age作为主要的操作字段，来呈现集合中计算的用法</p>
+<blockquote>
+<p>Test04Map.java</p>
+</blockquote>
+<pre><code>public class Test04Map {
+
+public static void main(String[] args) {
+     List&lt;Person&gt; pl = Person.createShortList();
+
+     SearchCriteria search = SearchCriteria.getInstance();
+
+     // Calc average age of pilots old style
+     System.out.println(&quot;== Calc Old Style ==&quot;);
+     int sum = 0;
+     int count = 0;
+
+     for (Person p:pl){
+       if (p.getAge() &gt;= 23 &amp;&amp; p.getAge() &lt;= 65 ){
+         sum = sum + p.getAge();
+         count++;
+       }
+     }
+
+     long average = sum / count;
+     System.out.println(&quot;Total Ages: &quot; + sum);
+     System.out.println(&quot;Average Age: &quot; + average);
+
+
+     // Get sum of ages
+     System.out.println(&quot;\n== Calc New Style ==&quot;);
+     long totalAge = pl
+             .stream()
+             .filter(search.getCriteria(&quot;allPilots&quot;))
+             .mapToInt(p -&gt; p.getAge())
+             .sum();
+
+     // Get average of ages
+     OptionalDouble averageAge = pl
+             .parallelStream()
+             .filter(search.getCriteria(&quot;allPilots&quot;))
+             .mapToDouble(p -&gt; p.getAge())
+             .average();
+
+     System.out.println(&quot;Total Ages: &quot; + totalAge);
+     System.out.println(&quot;Average Age: &quot; + averageAge.getAsDouble());
+
+   }
+
+}
+</code></pre><h2 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h2><p>  总算是写完了，博客后面写得不是很走心，但是还是比较开心，有一次通过官方文档，完成了一个知识点：另外由于篇幅问题，Android Studio中如何引入java 8将在另外一篇博客中说明，lambda就到这里了，欢迎勘误。</p>
+<h4 id="文档-："><a href="#文档-：" class="headerlink" title="文档 ："></a>文档 ：</h4><p> <a href="http://www.oracle.com/webfolder/technetwork/tutorials/obe/java/Lambda-QuickStart/index.html#section3" target="_blank" rel="noopener">oracle 官方教程</a></p>
+
+                </div>
+            </section>
+        </article>
+    </div>
+
+    
+    <div style="height: 4vw;width: 100%"></div>
+    <nav id="gobottom" class="pagination">
+        
+        <a class="prev-post" title="" href="/2018/12/26/README/">
+            ← 
+        </a>
+        
+        <span class="prev-next-post">•</span>
+        
+        <a class="next-post" title="Hello World" href="/2018/12/26/hello-world/">
+            Hello World →
+        </a>
+        
+    </nav>
+
+    
+</main>
+
+<div class="toc-bar">
+    <div class="toc-btn-bar">
+        <a href="#site-main" class="toc-btn">
+            <svg viewbox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg"><path d="M793.024 710.272a32 32 0 1 0 45.952-44.544l-310.304-320a32 32 0 0 0-46.4 0.48l-297.696 320a32 32 0 0 0 46.848 43.584l274.752-295.328 286.848 295.808z"/></svg>
+        </a>
+        <div class="toc-btn toc-switch">
+            <svg class="toc-open" viewbox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg"><path d="M779.776 480h-387.2a32 32 0 0 0 0 64h387.2a32 32 0 0 0 0-64M779.776 672h-387.2a32 32 0 0 0 0 64h387.2a32 32 0 0 0 0-64M256 288a32 32 0 1 0 0 64 32 32 0 0 0 0-64M392.576 352h387.2a32 32 0 0 0 0-64h-387.2a32 32 0 0 0 0 64M256 480a32 32 0 1 0 0 64 32 32 0 0 0 0-64M256 672a32 32 0 1 0 0 64 32 32 0 0 0 0-64"/></svg>
+            <svg class="toc-close hide" viewbox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg"><path d="M512 960c-247.039484 0-448-200.960516-448-448S264.960516 64 512 64 960 264.960516 960 512 759.039484 960 512 960zM512 128.287273c-211.584464 0-383.712727 172.128262-383.712727 383.712727 0 211.551781 172.128262 383.712727 383.712727 383.712727 211.551781 0 383.712727-172.159226 383.712727-383.712727C895.712727 300.415536 723.551781 128.287273 512 128.287273z"/><path d="M557.05545 513.376159l138.367639-136.864185c12.576374-12.416396 12.672705-32.671738 0.25631-45.248112s-32.704421-12.672705-45.248112-0.25631l-138.560301 137.024163-136.447897-136.864185c-12.512727-12.512727-32.735385-12.576374-45.248112-0.063647-12.512727 12.480043-12.54369 32.735385-0.063647 45.248112l136.255235 136.671523-137.376804 135.904314c-12.576374 12.447359-12.672705 32.671738-0.25631 45.248112 6.271845 6.335493 14.496116 9.504099 22.751351 9.504099 8.12794 0 16.25588-3.103239 22.496761-9.247789l137.567746-136.064292 138.687596 139.136568c6.240882 6.271845 14.432469 9.407768 22.65674 9.407768 8.191587 0 16.352211-3.135923 22.591372-9.34412 12.512727-12.480043 12.54369-32.704421 0.063647-45.248112L557.05545 513.376159z"/></svg>
+        </div>
+        <a href="#gobottom" class="toc-btn">
+            <svg viewbox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg"><path d="M231.424 346.208a32 32 0 0 0-46.848 43.584l297.696 320a32 32 0 0 0 46.4 0.48l310.304-320a32 32 0 1 0-45.952-44.544l-286.848 295.808-274.752-295.36z"/></svg>
+        </a>
+    </div>
+    <div class="toc-main">
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#java-8-Lambda表达式"><span class="toc-text">java 8 Lambda表达式</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#介绍"><span class="toc-text">介绍</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#软硬件环境"><span class="toc-text">软硬件环境</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Lambda应用在那些场景呢？因为不知道怎么翻译合适就直接上英语了"><span class="toc-text">Lambda应用在那些场景呢？因为不知道怎么翻译合适就直接上英语了.</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Anonymous-Inner-Class"><span class="toc-text">Anonymous Inner Class</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Functional-Interface"><span class="toc-text">Functional Interface</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Lambda-Expression-Syntax"><span class="toc-text">Lambda Expression Syntax</span></a></li></ol></li></ol><li class="toc-item toc-level-2"><a class="toc-link" href="#lambda表达式实例"><span class="toc-text">lambda表达式实例</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Listener-Lambda"><span class="toc-text">Listener Lambda</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Comparator-Lambda"><span class="toc-text">Comparator Lambda</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Runnable-Lambda"><span class="toc-text">Runnable Lambda</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Improving-Code-with-Lambda-Expression"><span class="toc-text">Improving Code with Lambda Expression</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#The-java-util-function-包"><span class="toc-text">The java.util.function 包</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#传统的方式"><span class="toc-text">传统的方式</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#使用Function-Interface的方式"><span class="toc-text">使用Function Interface的方式</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#输出"><span class="toc-text">输出</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#lambda表达式和集合"><span class="toc-text">lambda表达式和集合</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#stream"><span class="toc-text">stream</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#结语"><span class="toc-text">结语</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#文档-："><span class="toc-text">文档 ：</span></a></li></ol></li>
+    </div>
+</div>
+
+
+
+	</div>
+	
+
+
+<aside class="read-next outer">
+    <div class="inner">
+        <div class="read-next-feed">
+            
+            
+
+<article class="read-next-card" style="background-image: url(https://i.loli.net/2017/11/26/5a19c56faa29f.jpg)">
+  <header class="read-next-card-header">
+    <small class="read-next-card-header-sitetitle">&mdash; 梳庇湖砍柴人 &mdash;</small>
+    <h3 class="read-next-card-header-title">Recent Posts</h3>
+  </header>
+  <div class="read-next-divider">
+    <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24">
+      <path d="M13 14.5s2 3 5 3 5.5-2.463 5.5-5.5S21 6.5 18 6.5c-5 0-7 11-12 11C2.962 17.5.5 15.037.5 12S3 6.5 6 6.5s4.5 3.5 4.5 3.5"/>
+    </svg>
+  </div>
+  <div class="read-next-card-content">
+    <ul>
+      
+      
+      
+      <li>
+        <a href="/2018/12/26/README/"></a>
+      </li>
+      
+      
+      
+      <li>
+        <a href="/2018/12/26/Java8-lambda表达式/"></a>
+      </li>
+      
+      
+      
+      <li>
+        <a href="/2018/12/26/hello-world/">Hello World</a>
+      </li>
+      
+      
+    </ul>
+  </div>
+  <footer class="read-next-card-footer">
+    <a href="/archives">  MORE  → </a>
+  </footer>
+</article>
+
+            
+            
+            
+
+
+            
+            
+            
+
+            
+        </div>
+    </div>
+</aside>
+
+	
+
+
+
+
+<div id="search" class="search-overlay subscribe-overlay">
+    <div class="search-form">
+        
+        <img class="search-overlay-logo" src="https://i.loli.net/2017/11/26/5a19c0b50432e.png" alt="梳庇湖砍柴人">
+        
+        <input id="local-search-input" class="search-input" type="text" name="search" placeholder="Search ...">
+        <a class="search-overlay-close" href="#"></a>
+    </div>
+    <div id="local-search-result"></div>
+</div>
+
+
+<footer class="site-footer outer">
+	<div class="site-footer-content inner">
+		<section class="copyright">
+			<a href="/" title="梳庇湖砍柴人">梳庇湖砍柴人</a>
+			&copy; 2018
+		</section>
+		<nav class="site-footer-nav">
+			
+            <a href="https://hexo.io" title="Hexo" target="_blank" rel="noopener">Hexo</a>
+            <a href="https://github.com/xzhih/hexo-theme-casper" title="Casper" target="_blank" rel="noopener">Casper</a>
+        </nav>
+    </div>
+</footer>
+	
+
+
+<script>
+    if(window.navigator && navigator.serviceWorker) {
+        navigator.serviceWorker.getRegistrations()
+        .then(function(registrations) {
+            for(let registration of registrations) {
+                registration.unregister();
+            }
+        });
+    }
+</script>
+
+
+
+
+
+
+
+<div class="floating-header">
+	<div class="floating-header-logo">
+        <a href="/" title="梳庇湖砍柴人">
+			
+                <img src="https://i.loli.net/2017/11/26/5a19c0b50432e.png" alt="梳庇湖砍柴人 icon">
+			
+            <span>梳庇湖砍柴人</span>
+        </a>
+    </div>
+    <span class="floating-header-divider">&mdash;</span>
+    <div class="floating-header-title"></div>
+    <progress class="progress" value="0">
+        <div class="progress-container">
+            <span class="progress-bar"></span>
+        </div>
+    </progress>
+</div>
+
+
+
+
+
+<script src="/js/mix/post-lazy-local.min.js"></script>
+
+<script>;(function() {var bLazy = new Blazy()})();</script>
+
+
+
+
+<script src="/js/lightgallery.min.js"></script>
+<link rel="stylesheet" href="/css/lightgallery.min.css">
+<script>
+    lightGallery(document.getElementById('lightgallery'), {
+        selector: '.post-img'
+    });
+</script>
+
+
+
+
+
+
+
+
+
+<script>searchFunc("/")</script>
+
+
+
+
+
+</body>
+</html>
