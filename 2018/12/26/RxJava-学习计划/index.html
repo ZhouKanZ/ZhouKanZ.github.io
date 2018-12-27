@@ -17,7 +17,7 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Hello World | ZkQueen</title>
+	<title>RxJava 学习计划 | ZkQueen</title>
 
 	<meta name="HandheldFriendly" content="True">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
@@ -45,14 +45,14 @@
 
 	<meta property="og:site_name" content="ZkQueen">
 	<meta property="og:type" content="article">
-	<meta property="og:title" content="Hello World | ZkQueen">
+	<meta property="og:title" content="RxJava 学习计划 | ZkQueen">
 	<meta property="og:description" content="i come from mountain , for u">
-	<meta property="og:url" content="http://yoursite.com/2018/12/26/hello-world/">
+	<meta property="og:url" content="http://yoursite.com/2018/12/26/RxJava-学习计划/">
 
 	
-	<meta property="article:published_time" content="2018-12-26T16:12:74+08:00"> 
+	<meta property="article:published_time" content="2018-12-26T17:12:07+08:00"> 
 	<meta property="article:author" content="ZhouKanZ">
-	<meta property="article:published_first" content="ZkQueen, /2018/12/26/hello-world/">
+	<meta property="article:published_first" content="ZkQueen, /2018/12/26/RxJava-学习计划/">
 	
 </head>
 <body class="post-template">
@@ -123,7 +123,7 @@
     <div class="inner">
         <header class="post-full-header">
             <section class="post-full-meta">
-                <time class="post-full-meta-date" datetime="2018-12-26T08:44:06.745Z" itemprop="datePublished">
+                <time class="post-full-meta-date" datetime="2018-12-26T09:05:12.074Z" itemprop="datePublished">
                     2018-12-26
                 </time>
                 
@@ -131,16 +131,34 @@
                 
                 
             </section>
-            <h1 class="post-full-title">Hello World</h1>
+            <h1 class="post-full-title">RxJava 学习计划</h1>
         </header>
         <article class="post-full ">
             
-            <figure class="post-full-image" style="background-image: url(https://drscdn.500px.org/photo/282544705/q%3D80_h%3D300/v2?webp=true&sig=6be48a4fef3d251e96a44f3cde119e2dce64bca36ad48bdfb4815e38c074446b)">
+            <figure class="post-full-image" style="background-image: url(http://mindbowser.com/wp-content/uploads/2018/01/RxJava-in-Andriod.png)">
             </figure>
             
             <section class="post-full-content">
                 <div id="lightgallery" class="markdown-body">
-                    
+                    <p> &nbsp;&nbsp;&nbsp;&nbsp;从14年Rxjava第一次面世到17年，已经迭代到了2.x,不管对于Android还是java来说异步的思想，打破了我们传统的做法，之前看过扔物线的rxjava，里面提到rxjava的核心思想是异步。我自己使用Rxjava也有几个月了，因为没有去很具体的归纳，很多操作符都只是停留在使用上面，很羞愧的说，很多操作符都记不住作用，但是余以为这些都不关键，编程重在思想，我那点问题难道不能忽略么，是吧？ </p>
+<p> &nbsp;&nbsp;&nbsp;&nbsp;好了闲话不多，说说这次计划的具体安排，我自己准备总共花费大概两周的时间，从哲学的角度全面分析：“我是谁？我在哪？谁打我？我怎么死了？”这三个问题展开对rxjava的攻坚。主要的策略是源码和官方文档，届时我蹩脚的英语CET-4又能发挥一点作用，其实想到这里我是拒绝的。</p>
+<p> （ps:时间其实没那么充裕，尽量做到从使用到理解，从理解到深入，直到理解思想，当然没有理想不丰满）</p>
+<p> &nbsp;&nbsp;&nbsp;&nbsp;这里就需要说一下如何去学，又如何去写一个知识点，做到什么程度，等等一些问题，也借这几个问题分析一下要去掌握的主要内容。说实在的我是首次接触写博客，肯定避免不了一些纰漏，和错误，希望能及时指出共同进步。</p>
+<h5 id="如何去学？"><a href="#如何去学？" class="headerlink" title="如何去学？"></a>如何去学？</h5><p> &nbsp;&nbsp;&nbsp;&nbsp;前面也说到其实对rxjava也有一些了解，但是还是处于门外汉的级别，那么对于一个完全陌生的东西要怎么去掌握呢？最好的方式是用自己熟悉的东西去拟合，那样所有的知识之间的联系会更深，也可以帮助我们去了解它。<br><br> &nbsp;&nbsp;&nbsp;&nbsp;对于RxJava，我们熟悉的有 ： 观察者模式、异步。<br><br> &nbsp;&nbsp;&nbsp;&nbsp;陌生的就是Rxjava的演变既 ：Reactive-stream <br><br> &nbsp;&nbsp;&nbsp;&nbsp;本次的计划第一步的中心放在熟悉和陌生的知识点上，观察者模式建议去看设计模式之禅（看完之后你肯定也有向我一样惊讶，竟然有人能把一个东西写的如此通俗易懂），异步和后者将在本周完成。</p>
+<ul>
+<li>single dependency: Reactive-Streams</li>
+<li>continued support for Java 6+ &amp; Android 2.3+</li>
+<li>performance gains through design changes learned through the 1.x cycle and through Reactive-Streams-Commons research project.</li>
+<li>Java 8 lambda-friendly API</li>
+<li>non-opinionated about source of concurrency (threads, pools, event loops, fibers, actors, etc)<br>async or synchronous execution</li>
+<li>virtual time and schedulers for parameterized concurrency</li>
+</ul>
+<p>这是RxJava2的一些描述</p>
+<h5 id="如何去写？"><a href="#如何去写？" class="headerlink" title="如何去写？"></a>如何去写？</h5><p> &nbsp;&nbsp;&nbsp;&nbsp;如何去写，这个问题其实我及不擅长。什么作文都能写成散文，貌合神离用来形容最贴切不过了，不管怎么样先写再说。</p>
+<h5 id="到什么程度？"><a href="#到什么程度？" class="headerlink" title="到什么程度？"></a>到什么程度？</h5><p> &nbsp;&nbsp;&nbsp;&nbsp;程度最好到能体会到思想，当然最基本的使用是必须的，场景分析和那些情况适合用RxJava也必须列入考虑。如果不出意外的话，将用三篇博客来完成，这个内容。 RxJava的使用—之操作符全家桶、蕴含Rxjava中的思想、从Rxjava中学到什么。</p>
+<h3 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h3><p> &nbsp;&nbsp;&nbsp;&nbsp;婚都没结，结什么语</p>
+<h3 id="附录"><a href="#附录" class="headerlink" title="附录"></a>附录</h3><p> &nbsp;&nbsp;&nbsp;&nbsp;<a href="https://github.com/ZhouKanZ/designPattern/blob/master/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E4%B9%8B%E7%A6%85%EF%BC%88%E7%AC%AC2%E7%89%88%EF%BC%89.pdf" target="_blank" rel="noopener">设计模式之禅</a></p>
+
                 </div>
             </section>
         </article>
@@ -150,11 +168,15 @@
     <div style="height: 4vw;width: 100%"></div>
     <nav id="gobottom" class="pagination">
         
-        <a class="prev-post" title="梳碧湖大镖客的首侃" href="/2018/12/26/梳碧湖大镖客的首侃/">
-            ← 梳碧湖大镖客的首侃
+        <a class="prev-post" title="casper 测试" href="/2018/12/27/casper-测试/">
+            ← casper 测试
         </a>
         
         <span class="prev-next-post">•</span>
+        
+        <a class="next-post" title="" href="/2018/12/26/README/">
+             →
+        </a>
         
     </nav>
 
@@ -175,8 +197,8 @@
         </a>
     </div>
     <div class="toc-main">
-        
-    </div>
+        <ol class="toc"><li class="toc-item toc-level-5"><a class="toc-link" href="#如何去学？"><span class="toc-text">如何去学？</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#如何去写？"><span class="toc-text">如何去写？</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#到什么程度？"><span class="toc-text">到什么程度？</span></a></li></ol><li class="toc-item toc-level-3"><a class="toc-link" href="#结语"><span class="toc-text">结语</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#附录"><span class="toc-text">附录</span></a>
+    </li></div>
 </div>
 
 
@@ -316,7 +338,7 @@
         </a>
     </div>
     <span class="floating-header-divider">&mdash;</span>
-    <div class="floating-header-title">Hello World</div>
+    <div class="floating-header-title">RxJava 学习计划</div>
     <progress class="progress" value="0">
         <div class="progress-container">
             <span class="progress-bar"></span>
