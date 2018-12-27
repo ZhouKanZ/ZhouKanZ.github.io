@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="">
+<html lang="简体中文">
 
 
 
@@ -17,16 +17,16 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>java 8 Lambda表达式 | 梳碧湖砍柴人</title>
+	<title>java8 Lambda表达式 | ZkQueen</title>
 
 	<meta name="HandheldFriendly" content="True">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 	<meta name="generator" content="hexo">
-	<meta name="author" content="zhoukanz">
+	<meta name="author" content="ZhouKanZ">
 	<meta name="description" content="i come from mountain , for u">
 
 	
-	<meta name="keywords" content="i , am , king">
+	<meta name="keywords" content="">
 	
 
 	
@@ -43,16 +43,16 @@
 
 	
 
-	<meta property="og:site_name" content="梳碧湖砍柴人">
+	<meta property="og:site_name" content="ZkQueen">
 	<meta property="og:type" content="article">
-	<meta property="og:title" content="java 8 Lambda表达式 | 梳碧湖砍柴人">
+	<meta property="og:title" content="java8 Lambda表达式 | ZkQueen">
 	<meta property="og:description" content="i come from mountain , for u">
 	<meta property="og:url" content="http://yoursite.com/2018/12/26/Java8-lambda表达式/">
 
 	
 	<meta property="article:published_time" content="2018-12-26T17:12:06+08:00"> 
-	<meta property="article:author" content="zhoukanz">
-	<meta property="article:published_first" content="梳碧湖砍柴人, /2018/12/26/Java8-lambda表达式/">
+	<meta property="article:author" content="ZhouKanZ">
+	<meta property="article:published_first" content="ZkQueen, /2018/12/26/Java8-lambda表达式/">
 	
 </head>
 <body class="post-template">
@@ -131,7 +131,7 @@
                 
                 
             </section>
-            <h1 class="post-full-title">java 8 Lambda表达式</h1>
+            <h1 class="post-full-title">java8 Lambda表达式</h1>
         </header>
         <article class="post-full ">
             
@@ -140,7 +140,7 @@
             
             <section class="post-full-content">
                 <div id="lightgallery" class="markdown-body">
-                    <h3 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h3><p>本篇文章主要是RxJava官方文档的辅料，里面太多的Lambda表达式，没有一些了解的确难以看懂，因为是主要的重心还是落在RxJava上，所以本文概述一下如何在Android Studio中使用以及各个表达式的意思，还有与Rxjava及其相似的stream。<a href="http://www.oracle.com/webfolder/technetwork/tutorials/obe/java/Lambda-QuickStart/index.html#" target="_blank" rel="noopener">官方文档</a>如何描述Lambda表达式：</p>
+                    <h3 id="Tips"><a href="#Tips" class="headerlink" title="Tips"></a>Tips</h3><p>本篇文章主要是RxJava官方文档的辅料，里面太多的Lambda表达式，没有一些了解的确难以看懂，因为是主要的重心还是落在RxJava上，所以本文概述一下如何在Android Studio中使用以及各个表达式的意思，还有与Rxjava及其相似的stream。<a href="http://www.oracle.com/webfolder/technetwork/tutorials/obe/java/Lambda-QuickStart/index.html#" target="_blank" rel="noopener">官方文档</a>如何描述Lambda表达式：</p>
 <blockquote>
 <p> Lambda expressions are a new and important feature included in Java SE 8. They provide a clear and concise way to represent one method interface using an expression. Lambda expressions also improve the Collection libraries making it easier to iterate through, filter, and extract data from a Collection. In addition, new concurrency features improve performance in multicore environments.</p>
 </blockquote>
@@ -149,27 +149,11 @@
 <li>JDK 8</li>
 <li>NetBeans 7.4 （这个只是IDE 在Android Studio中同样是可以使用的）</li>
 </ul>
-<h2 id="Lambda应用在那些场景呢？因为不知道怎么翻译合适就直接上英语了"><a href="#Lambda应用在那些场景呢？因为不知道怎么翻译合适就直接上英语了" class="headerlink" title="Lambda应用在那些场景呢？因为不知道怎么翻译合适就直接上英语了."></a>Lambda应用在那些场景呢？因为不知道怎么翻译合适就直接上英语了.</h2><h4 id="Anonymous-Inner-Class"><a href="#Anonymous-Inner-Class" class="headerlink" title="Anonymous Inner Class"></a>Anonymous Inner Class</h4><p> 匿名内部类，用过java的人这个应该都知道就不再赘述</p>
-<pre><code>// 匿名内部类
-JButton jb1 = new JButton();
-jb1.addActionListener(new ActionListener() {
-    @Override
-    public void actionPerformed(ActionEvent e) {
-        System.out.println(&quot;xxx&quot;);
-    }
-});
-
-// lambda表达式的方式
-JButton jb = new JButton();
-jb.addActionListener((e) -&gt; System.out.println());
-</code></pre><h4 id="Functional-Interface"><a href="#Functional-Interface" class="headerlink" title="Functional Interface"></a>Functional Interface</h4><p>在java中，一个interface里面只有一个需要实现的方法，这种形式的接口就被称作为Functional Interface,也被叫做SAM.(Single Abstract Method)<br>    public interface ActionListener extends EventListener {</p>
-<pre><code>    /**
-     * Invoked when an action occurs.
-     */
-    public void actionPerformed(ActionEvent e);
-
-}
-</code></pre><h4 id="Lambda-Expression-Syntax"><a href="#Lambda-Expression-Syntax" class="headerlink" title="Lambda Expression Syntax"></a>Lambda Expression Syntax</h4><p> λ表达式的语法，通常λ表达式可以将5行代码，转换成一行代码来表示，上面的匿名内部类便是例子，λ表达式的语法由如下三个部分组成：</p>
+<h3 id="Lambda应用场景"><a href="#Lambda应用场景" class="headerlink" title="Lambda应用场景"></a>Lambda应用场景</h3><h4 id="Anonymous-Inner-Class"><a href="#Anonymous-Inner-Class" class="headerlink" title="Anonymous Inner Class"></a>Anonymous Inner Class</h4><p> 匿名内部类，用过java的人这个应该都知道就不再赘述</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">// 匿名内部类</span><br><span class="line">JButton jb1 = new JButton();</span><br><span class="line">jb1.addActionListener(new ActionListener() &#123;</span><br><span class="line">    @Override</span><br><span class="line">    public void actionPerformed(ActionEvent e) &#123;</span><br><span class="line">        System.out.println(&quot;xxx&quot;);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br><span class="line">   // lambda表达式的方式</span><br><span class="line">JButton jb = new JButton();</span><br><span class="line">jb.addActionListener((e) -&gt; System.out.println());</span><br></pre></td></tr></table></figure>
+<h4 id="Functional-Interface"><a href="#Functional-Interface" class="headerlink" title="Functional Interface"></a>Functional Interface</h4><p>在java中，一个interface里面只有一个需要实现的方法，这种形式的接口就被称作为Functional Interface,也被叫做SAM.(Single Abstract Method)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">public interface ActionListener extends EventListener &#123;</span><br><span class="line"></span><br><span class="line">    /**</span><br><span class="line">     * Invoked when an action occurs.</span><br><span class="line">     */</span><br><span class="line">    public void actionPerformed(ActionEvent e);</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="Lambda-Expression-Syntax"><a href="#Lambda-Expression-Syntax" class="headerlink" title="Lambda Expression Syntax"></a>Lambda Expression Syntax</h4><p> λ表达式的语法，通常λ表达式可以将5行代码，转换成一行代码来表示，上面的匿名内部类便是例子，λ表达式的语法由如下三个部分组成：</p>
 <table>
 <thead>
 <tr>
@@ -186,68 +170,10 @@ jb.addActionListener((e) -&gt; System.out.println());
 </tr>
 </tbody>
 </table>
-<h2 id="lambda表达式实例"><a href="#lambda表达式实例" class="headerlink" title="lambda表达式实例"></a>lambda表达式实例</h2><h4 id="Listener-Lambda"><a href="#Listener-Lambda" class="headerlink" title="Listener Lambda"></a>Listener Lambda</h4><pre><code>private static void listenerLambda() {
-    //        Listener Lambda
-    JButton jb1 = new JButton();
-    jb1.addActionListener(new ActionListener() {
-        @Override
-        public void actionPerformed(ActionEvent e) {
-            System.out.println(&quot;xxx&quot;);
-        }
-    });
-
-    // lambda表达式的方式
-    JButton jb = new JButton();
-    jb.addActionListener((e) -&gt; System.out.println());
-}
-</code></pre><h4 id="Comparator-Lambda"><a href="#Comparator-Lambda" class="headerlink" title="Comparator Lambda"></a>Comparator Lambda</h4><pre><code>private static void compatorLambda() {
-    // sort with inner class
-    List&lt;Person&gt; personList = new ArrayList&lt;&gt;();
-    personList.add(new Person(&quot;zk&quot;));
-    personList.add(new Person(&quot;ak&quot;));
-
-
-    System.out.println(&quot;sort with inner class&quot;);
-    Collections.sort(personList, new Comparator&lt;Person&gt;() {
-        @Override
-        public int compare(Person o1, Person o2) {
-            // 按照字典序排列 person
-            return o1.getSurName().compareTo(o2.getSurName());
-        }
-    });
-
-    for (Person p:
-            personList) {
-        System.out.println(p.getSurName());
-    }
-
-
-    System.out.println(&quot;sort with lambda&quot;);
-    // sort with lambda
-    Collections.sort(personList, (p1,p2)-&gt;p1.getSurName().compareTo(p2.getSurName()));
-    for (Person p:
-            personList) {
-        System.out.println(p.getSurName());
-    }
-}
-</code></pre><h4 id="Runnable-Lambda"><a href="#Runnable-Lambda" class="headerlink" title="Runnable Lambda"></a>Runnable Lambda</h4><pre><code>private static void runnableLambda() {
-    // 传统模式
-    Runnable r1 = new Runnable() {
-        @Override
-        public void run() {
-            System.out.println(&quot;Tran  A&quot;);
-            System.out.println(&quot;Tran  B&quot;);
-        }
-    };
-
-    // lambda
-    Runnable r2 = () -&gt; System.out.print(&quot;Lambda  A&quot;);
-    System.out.print(&quot;Lambda  B&quot;);
-
-    r1.run();
-    r2.run();
-}
-</code></pre><h2 id="Improving-Code-with-Lambda-Expression"><a href="#Improving-Code-with-Lambda-Expression" class="headerlink" title="Improving Code with Lambda Expression"></a>Improving Code with Lambda Expression</h2><p> 使用Lambda优化代码。代码优化这件事可轻可重，像我写代码的主要目的就是奔着功能去，一往无前，有bug回头改,往往都是一去不返。代码优化有很多方面，像6大设计原则，23种设计模式等等，今天得例子要验证得Principle叫做 — ‘Don’t Repeat Yourself ‘ 简称 (DRY)，不得不说所有得原则全称都不如简称有格调。</p>
+<h3 id="lambda表达式实例"><a href="#lambda表达式实例" class="headerlink" title="lambda表达式实例"></a>lambda表达式实例</h3><h4 id="Listener-Lambda"><a href="#Listener-Lambda" class="headerlink" title="Listener Lambda"></a>Listener Lambda</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">private static void listenerLambda() &#123;</span><br><span class="line">       //        Listener Lambda</span><br><span class="line">       JButton jb1 = new JButton();</span><br><span class="line">       jb1.addActionListener(new ActionListener() &#123;</span><br><span class="line">           @Override</span><br><span class="line">           public void actionPerformed(ActionEvent e) &#123;</span><br><span class="line">               System.out.println(&quot;xxx&quot;);</span><br><span class="line">           &#125;</span><br><span class="line">       &#125;);</span><br><span class="line"></span><br><span class="line">       // lambda表达式的方式</span><br><span class="line">       JButton jb = new JButton();</span><br><span class="line">       jb.addActionListener((e) -&gt; System.out.println());</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
+<h4 id="Comparator-Lambda"><a href="#Comparator-Lambda" class="headerlink" title="Comparator Lambda"></a>Comparator Lambda</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">private static void compatorLambda() &#123;</span><br><span class="line">    // sort with inner class</span><br><span class="line">    List&lt;Person&gt; personList = new ArrayList&lt;&gt;();</span><br><span class="line">    personList.add(new Person(&quot;zk&quot;));</span><br><span class="line">    personList.add(new Person(&quot;ak&quot;));</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    System.out.println(&quot;sort with inner class&quot;);</span><br><span class="line">    Collections.sort(personList, new Comparator&lt;Person&gt;() &#123;</span><br><span class="line">        @Override</span><br><span class="line">        public int compare(Person o1, Person o2) &#123;</span><br><span class="line">            // 按照字典序排列 person</span><br><span class="line">            return o1.getSurName().compareTo(o2.getSurName());</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;);</span><br><span class="line"></span><br><span class="line">    for (Person p:</span><br><span class="line">            personList) &#123;</span><br><span class="line">        System.out.println(p.getSurName());</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    System.out.println(&quot;sort with lambda&quot;);</span><br><span class="line">    // sort with lambda</span><br><span class="line">    Collections.sort(personList, (p1,p2)-&gt;p1.getSurName().compareTo(p2.getSurName()));</span><br><span class="line">    for (Person p:</span><br><span class="line">            personList) &#123;</span><br><span class="line">        System.out.println(p.getSurName());</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="Runnable-Lambda"><a href="#Runnable-Lambda" class="headerlink" title="Runnable Lambda"></a>Runnable Lambda</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">private static void runnableLambda() &#123;</span><br><span class="line">    // 传统模式</span><br><span class="line">    Runnable r1 = new Runnable() &#123;</span><br><span class="line">        @Override</span><br><span class="line">        public void run() &#123;</span><br><span class="line">            System.out.println(&quot;Tran  A&quot;);</span><br><span class="line">            System.out.println(&quot;Tran  B&quot;);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;;</span><br><span class="line"></span><br><span class="line">    // lambda</span><br><span class="line">    Runnable r2 = () -&gt; System.out.print(&quot;Lambda  A&quot;);</span><br><span class="line">    System.out.print(&quot;Lambda  B&quot;);</span><br><span class="line"></span><br><span class="line">    r1.run();</span><br><span class="line">    r2.run();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="Improving-Code-with-Lambda-Expression"><a href="#Improving-Code-with-Lambda-Expression" class="headerlink" title="Improving Code with Lambda Expression"></a>Improving Code with Lambda Expression</h2><p> 使用Lambda优化代码。代码优化这件事可轻可重，像我写代码的主要目的就是奔着功能去，一往无前，有bug回头改,往往都是一去不返。代码优化有很多方面，像6大设计原则，23种设计模式等等，今天得例子要验证得Principle叫做 — ‘Don’t Repeat Yourself ‘ 简称 (DRY)，不得不说所有得原则全称都不如简称有格调。</p>
 <p> 那下面我们就来验证一下lambda相对于原有得做法到底 DRY 在哪里：</p>
 <blockquote>
 <p>1.场景 </p>
@@ -257,99 +183,19 @@ jb.addActionListener((e) -&gt; System.out.println());
 入伍 ： 男性年龄在18-25之间
 飞行员：年龄在23 到 65之间
 </code></pre><p> Person 字段 </p>
-<pre><code>public class Person {
-private String givenName;
-private String surName;
-private int age;
-private Gender gender;
-private String eMail;
-private String phone;
-private String address;    
-</code></pre><blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">public class Person &#123;</span><br><span class="line">   private String givenName;</span><br><span class="line">   private String surName;</span><br><span class="line">   private int age;</span><br><span class="line">   private Gender gender;</span><br><span class="line">   private String eMail;</span><br><span class="line">   private String phone;</span><br><span class="line">   private String address;	</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
 <p>2.创建person List</p>
 </blockquote>
 <p>   怎么创建比较随意，我这里就按照官网得方式来创建（在上一篇RxJava中有关于设计模式得附录）</p>
-<pre><code>   public static List&lt;Person&gt; createShortList() {
-    List&lt;Person&gt; people = new ArrayList&lt;&gt;();
-    people.add(
-            new Person.Builder().
-                    givenName(&quot;Bob&quot;)
-                    .surName(&quot;Baker&quot;)
-                    .age(21)
-                    .gender(Gender.MALE)
-                    .email(&quot;bob.baker@example.com&quot;)
-                    .phoneNumber(&quot;201-121-4678&quot;)
-                    .address(&quot;44 4th St, Smallville, KS 12333&quot;)
-                    .build()
-    );
-    people.add(
-            new Person.Builder()
-                    .givenName(&quot;Jane&quot;)
-                    .surName(&quot;Doe&quot;)
-                    .age(25)
-                    .gender(Gender.FEMALE)
-                    .email(&quot;jane.doe@example.com&quot;)
-                    .phoneNumber(&quot;202-123-4678&quot;)
-                    .address(&quot;33 3rd St, Smallville, KS 12333&quot;)
-                    .build()
-    );
-    people.add(
-            new Person.Builder()
-                    .givenName(&quot;John&quot;)
-                    .surName(&quot;Doe&quot;)
-                    .age(25)
-                    .gender(Gender.MALE)
-                    .email(&quot;john.doe@example.com&quot;)
-                    .phoneNumber(&quot;202-123-4678&quot;)
-                    .address(&quot;33 3rd St, Smallville, KS 12333&quot;)
-                    .build()
-    );
-
-    return people;
-}
-</code></pre><blockquote>
-<p>3.选出你所要挑选的满足条件的人</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line">public static List&lt;Person&gt; createShortList() &#123;</span><br><span class="line">    List&lt;Person&gt; people = new ArrayList&lt;&gt;();</span><br><span class="line">    people.add(</span><br><span class="line">            new Person.Builder().</span><br><span class="line">                    givenName(&quot;Bob&quot;)</span><br><span class="line">                    .surName(&quot;Baker&quot;)</span><br><span class="line">                    .age(21)</span><br><span class="line">                    .gender(Gender.MALE)</span><br><span class="line">                    .email(&quot;bob.baker@example.com&quot;)</span><br><span class="line">                    .phoneNumber(&quot;201-121-4678&quot;)</span><br><span class="line">                    .address(&quot;44 4th St, Smallville, KS 12333&quot;)</span><br><span class="line">                    .build()</span><br><span class="line">    );</span><br><span class="line">    people.add(</span><br><span class="line">            new Person.Builder()</span><br><span class="line">                    .givenName(&quot;Jane&quot;)</span><br><span class="line">                    .surName(&quot;Doe&quot;)</span><br><span class="line">                    .age(25)</span><br><span class="line">                    .gender(Gender.FEMALE)</span><br><span class="line">                    .email(&quot;jane.doe@example.com&quot;)</span><br><span class="line">                    .phoneNumber(&quot;202-123-4678&quot;)</span><br><span class="line">                    .address(&quot;33 3rd St, Smallville, KS 12333&quot;)</span><br><span class="line">                    .build()</span><br><span class="line">    );</span><br><span class="line">    people.add(</span><br><span class="line">            new Person.Builder()</span><br><span class="line">                    .givenName(&quot;John&quot;)</span><br><span class="line">                    .surName(&quot;Doe&quot;)</span><br><span class="line">                    .age(25)</span><br><span class="line">                    .gender(Gender.MALE)</span><br><span class="line">                    .email(&quot;john.doe@example.com&quot;)</span><br><span class="line">                    .phoneNumber(&quot;202-123-4678&quot;)</span><br><span class="line">                    .address(&quot;33 3rd St, Smallville, KS 12333&quot;)</span><br><span class="line">                    .build()</span><br><span class="line">    );</span><br><span class="line"></span><br><span class="line">    return people;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<ol start="3">
+<li>选出满足条件的人</li>
+</ol>
 </blockquote>
-<pre><code>public class RoboContactMethods {
-
-    public void callDrivers(List&lt;Person&gt; pl) {
-        for (Person p : pl) {
-            if (p.getAge() &gt;= 16) {
-                roboCall(p);
-            }
-        }
-    }
-
-    public void emailDraftees(List&lt;Person&gt; pl) {
-        for (Person p : pl) {
-            if (p.getAge() &gt;= 18 &amp;&amp; p.getAge() &lt;= 25 &amp;&amp; p.getGender() == Gender.MALE) {
-                roboEmail(p);
-            }
-        }
-    }
-
-    public void mailPilots(List&lt;Person&gt; pl) {
-        for (Person p : pl) {
-            if (p.getAge() &gt;= 23 &amp;&amp; p.getAge() &lt;= 65) {
-                roboMail(p);
-            }
-        }
-    }
-
-    public void roboCall(Person p) {
-        System.out.println(&quot;Calling &quot; + p.getGivenName() + &quot; &quot; + p.getSurName() + &quot; age &quot; + p.getAge() + &quot; at &quot; + p.getPhone());
-    }
-
-    public void roboEmail(Person p) {
-        System.out.println(&quot;EMailing &quot; + p.getGivenName() + &quot; &quot; + p.getSurName() + &quot; age &quot; + p.getAge() + &quot; at &quot; + p.geteMail());
-    }
-
-    public void roboMail(Person p) {
-        System.out.println(&quot;Mailing &quot; + p.getGivenName() + &quot; &quot; + p.getSurName() + &quot; age &quot; + p.getAge() + &quot; at &quot; + p.getAddress());
-    }
-
-}
-</code></pre><p>我看这段代码是没问题的，for循环迭代选出满足条件的人，完全没毛病；那我们来看看官方的犊子是怎么演的。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line">public class RoboContactMethods &#123;</span><br><span class="line"></span><br><span class="line">    public void callDrivers(List&lt;Person&gt; pl) &#123;</span><br><span class="line">        for (Person p : pl) &#123;</span><br><span class="line">            if (p.getAge() &gt;= 16) &#123;</span><br><span class="line">                roboCall(p);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public void emailDraftees(List&lt;Person&gt; pl) &#123;</span><br><span class="line">        for (Person p : pl) &#123;</span><br><span class="line">            if (p.getAge() &gt;= 18 &amp;&amp; p.getAge() &lt;= 25 &amp;&amp; p.getGender() == Gender.MALE) &#123;</span><br><span class="line">                roboEmail(p);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public void mailPilots(List&lt;Person&gt; pl) &#123;</span><br><span class="line">        for (Person p : pl) &#123;</span><br><span class="line">            if (p.getAge() &gt;= 23 &amp;&amp; p.getAge() &lt;= 65) &#123;</span><br><span class="line">                roboMail(p);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public void roboCall(Person p) &#123;</span><br><span class="line">        System.out.println(&quot;Calling &quot; + p.getGivenName() + &quot; &quot; + p.getSurName() + &quot; age &quot; + p.getAge() + &quot; at &quot; + p.getPhone());</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public void roboEmail(Person p) &#123;</span><br><span class="line">        System.out.println(&quot;EMailing &quot; + p.getGivenName() + &quot; &quot; + p.getSurName() + &quot; age &quot; + p.getAge() + &quot; at &quot; + p.geteMail());</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public void roboMail(Person p) &#123;</span><br><span class="line">        System.out.println(&quot;Mailing &quot; + p.getGivenName() + &quot; &quot; + p.getSurName() + &quot; age &quot; + p.getAge() + &quot; at &quot; + p.getAddress());</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>我看这段代码是没问题的，for循环迭代选出满足条件的人，完全没毛病；那我们来看看官方的犊子是怎么演的。</p>
 <ul>
 <li>没有遵循DRY原则<ul>
 <li>每个方法的选择条件必须重写</li>
@@ -363,228 +209,33 @@ private String address;
 <p>4.第一次重构</p>
 </blockquote>
 <p> 这次我们将上述的几个问题列入考虑，其实，我感觉我的翻译貌似出了点小差错，或者是我没明白他是什么意思，除了最后一项可以理解之外，其他的情况没弄懂是什么意思，再或者是本身语言的限制只能优化最后一项，那么下面看看，该如何重构。</p>
-<pre><code>public class RoboContactMethods2 {
-
-
-public void callDrivers(List&lt;Person&gt; pl) {
-    for (Person p : pl) {
-        if (isDriver(p)) {
-            roboCall(p);
-        }
-    }
-}
-
-public void emailDraftees(List&lt;Person&gt; pl) {
-    for (Person p : pl) {
-        if (isDraftee(p)) {
-            roboEmail(p);
-        }
-    }
-}
-
-public void mailPilots(List&lt;Person&gt; pl) {
-    for (Person p : pl) {
-        if (isPilot(p)) {
-            roboMail(p);
-        }
-    }
-}
-
-public boolean isDriver(Person p) {
-    return p.getAge() &gt;= 16;
-}
-
-public boolean isDraftee(Person p) {
-    return p.getAge() &gt;= 18 &amp;&amp; p.getAge() &lt;= 25 &amp;&amp; p.getGender() == Gender.MALE;
-}
-
-public boolean isPilot(Person p) {
-    return p.getAge() &gt;= 23 &amp;&amp; p.getAge() &lt;= 65;
-}
-
-public void roboCall(Person p) {
-    System.out.println(&quot;Calling &quot; + p.getGivenName() + &quot; &quot; + p.getSurName() + &quot; age &quot; + p.getAge() + &quot; at &quot; + p.getPhone());
-}
-
-public void roboEmail(Person p) {
-    System.out.println(&quot;EMailing &quot; + p.getGivenName() + &quot; &quot; + p.getSurName() + &quot; age &quot; + p.getAge() + &quot; at &quot; + p.geteMail());
-}
-
-public void roboMail(Person p) {
-    System.out.println(&quot;Mailing &quot; + p.getGivenName() + &quot; &quot; + p.getSurName() + &quot; age &quot; + p.getAge() + &quot; at &quot; + p.getAddress());
-}
-</code></pre><p>}</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line">public class RoboContactMethods2 &#123;</span><br><span class="line"></span><br><span class="line">        public void callDrivers(List&lt;Person&gt; pl) &#123;</span><br><span class="line">            for (Person p : pl) &#123;</span><br><span class="line">                if (isDriver(p)) &#123;</span><br><span class="line">                    roboCall(p);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        public void emailDraftees(List&lt;Person&gt; pl) &#123;</span><br><span class="line">            for (Person p : pl) &#123;</span><br><span class="line">                if (isDraftee(p)) &#123;</span><br><span class="line">                    roboEmail(p);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        public void mailPilots(List&lt;Person&gt; pl) &#123;</span><br><span class="line">            for (Person p : pl) &#123;</span><br><span class="line">                if (isPilot(p)) &#123;</span><br><span class="line">                    roboMail(p);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        public boolean isDriver(Person p) &#123;</span><br><span class="line">            return p.getAge() &gt;= 16;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        public boolean isDraftee(Person p) &#123;</span><br><span class="line">            return p.getAge() &gt;= 18 &amp;&amp; p.getAge() &lt;= 25 &amp;&amp; p.getGender() == Gender.MALE;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        public boolean isPilot(Person p) &#123;</span><br><span class="line">            return p.getAge() &gt;= 23 &amp;&amp; p.getAge() &lt;= 65;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        public void roboCall(Person p) &#123;</span><br><span class="line">            System.out.println(&quot;Calling &quot; + p.getGivenName() + &quot; &quot; + p.getSurName() + &quot; age &quot; + p.getAge() + &quot; at &quot; + p.getPhone());</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        public void roboEmail(Person p) &#123;</span><br><span class="line">            System.out.println(&quot;EMailing &quot; + p.getGivenName() + &quot; &quot; + p.getSurName() + &quot; age &quot; + p.getAge() + &quot; at &quot; + p.geteMail());</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        public void roboMail(Person p) &#123;</span><br><span class="line">            System.out.println(&quot;Mailing &quot; + p.getGivenName() + &quot; &quot; + p.getSurName() + &quot; age &quot; + p.getAge() + &quot; at &quot; + p.getAddress());</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p> 搜索条件被封装进方法中，较之前的代码而言确实有一定的提升，条件可以被反复利用并且可以更方便的更改。但是，还是有很多重复的地方，是不是没有更好的办法呢？（······肯定是有的，要不我说个球）</p>
 <p> 在使用lambda之前先看看还有什么能改进的或者是为lambda做一些铺垫。上述的代码，其实并不符合开闭原则（OCP – 原则上对修改关闭，对扩展开放），这段程序可能发生改变是招聘条件，那么我们让调用程序自己去维护，就更进一步的优化了。</p>
 <p> 将条件抽象成接口，让调用者自己去维护，接口如下：</p>
-<pre><code>public interface MyTest&lt;T&gt; {
-  public boolean test(T t);
-}
-</code></pre><blockquote>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">public interface MyTest&lt;T&gt; &#123;</span><br><span class="line">  public boolean test(T t);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
 <p>RoboContactsAnon.java</p>
 </blockquote>
-<pre><code>  package com.example.lambda;
-  import java.util.List;
-  import java.util.function.Predicate;
-
-/**
- * @author MikeW
- */
-public class RoboContactsAnon {
-    public void phoneContacts(List&lt;Person&gt; pl, MyTest&lt;Person&gt; pred) {
-        for (Person p : pl) {
-            if (pred.test(p)) {
-                roboCall(p);
-            }
-        }
-    }
-
-    public void emailContacts(List&lt;Person&gt; pl, MyTest&lt;Person&gt; pred) {
-        for (Person p : pl) {
-            if (pred.test(p)) {
-                roboEmail(p);
-            }
-        }
-    }
-
-    public void mailContacts(List&lt;Person&gt; pl, MyTest&lt;Person&gt; pred) {
-        for (Person p : pl) {
-            if (pred.test(p)) {
-                roboMail(p);
-            }
-        }
-    }
-
-    public void roboCall(Person p) {
-        System.out.println(&quot;Calling &quot; + p.getGivenName() + &quot; &quot; + p.getSurName() + &quot; age &quot; + p.getAge() + &quot; at &quot; + p.getPhone());
-    }
-
-    public void roboEmail(Person p) {
-        System.out.println(&quot;EMailing &quot; + p.getGivenName() + &quot; &quot; + p.getSurName() + &quot; age &quot; + p.getAge() + &quot; at &quot; + p.getEmail());
-    }
-
-    public void roboMail(Person p) {
-        System.out.println(&quot;Mailing &quot; + p.getGivenName() + &quot; &quot; + p.getSurName() + &quot; age &quot; + p.getAge() + &quot; at &quot; + p.getAddress());
-    }
-}
-</code></pre><blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line">package com.example.lambda;</span><br><span class="line">import java.util.List;</span><br><span class="line">import java.util.function.Predicate;</span><br><span class="line"></span><br><span class="line"> /**</span><br><span class="line">  * @author MikeW</span><br><span class="line">  */</span><br><span class="line"> public class RoboContactsAnon &#123;</span><br><span class="line">     public void phoneContacts(List&lt;Person&gt; pl, MyTest&lt;Person&gt; pred) &#123;</span><br><span class="line">         for (Person p : pl) &#123;</span><br><span class="line">             if (pred.test(p)) &#123;</span><br><span class="line">                 roboCall(p);</span><br><span class="line">             &#125;</span><br><span class="line">         &#125;</span><br><span class="line">     &#125;</span><br><span class="line"></span><br><span class="line">     public void emailContacts(List&lt;Person&gt; pl, MyTest&lt;Person&gt; pred) &#123;</span><br><span class="line">         for (Person p : pl) &#123;</span><br><span class="line">             if (pred.test(p)) &#123;</span><br><span class="line">                 roboEmail(p);</span><br><span class="line">             &#125;</span><br><span class="line">         &#125;</span><br><span class="line">     &#125;</span><br><span class="line"></span><br><span class="line">     public void mailContacts(List&lt;Person&gt; pl, MyTest&lt;Person&gt; pred) &#123;</span><br><span class="line">         for (Person p : pl) &#123;</span><br><span class="line">             if (pred.test(p)) &#123;</span><br><span class="line">                 roboMail(p);</span><br><span class="line">             &#125;</span><br><span class="line">         &#125;</span><br><span class="line">     &#125;</span><br><span class="line"></span><br><span class="line">     public void roboCall(Person p) &#123;</span><br><span class="line">         System.out.println(&quot;Calling &quot; + p.getGivenName() + &quot; &quot; + p.getSurName() + &quot; age &quot; + p.getAge() + &quot; at &quot; + p.getPhone());</span><br><span class="line">     &#125;</span><br><span class="line"></span><br><span class="line">     public void roboEmail(Person p) &#123;</span><br><span class="line">         System.out.println(&quot;EMailing &quot; + p.getGivenName() + &quot; &quot; + p.getSurName() + &quot; age &quot; + p.getAge() + &quot; at &quot; + p.getEmail());</span><br><span class="line">     &#125;</span><br><span class="line"></span><br><span class="line">     public void roboMail(Person p) &#123;</span><br><span class="line">         System.out.println(&quot;Mailing &quot; + p.getGivenName() + &quot; &quot; + p.getSurName() + &quot; age &quot; + p.getAge() + &quot; at &quot; + p.getAddress());</span><br><span class="line">     &#125;</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
 <p>RoboCallTest03.java 调用程序</p>
 </blockquote>
-<pre><code>public class RoboCallTest03 {
-
-    public static void main(String[] args) {
-
-      List&lt;Person&gt; pl = Person.createShortList();
-      RoboContactsAnon robo = new RoboContactsAnon();
-
-      System.out.println(&quot;\n==== Test 03 ====&quot;);
-      System.out.println(&quot;\n=== Calling all Drivers ===&quot;);
-      robo.phoneContacts(pl,
-          new MyTest&lt;Person&gt;(){
-            @Override
-            public boolean test(Person p){
-              return p.getAge() &gt;=16;
-            }
-          }
-      );
-
-      System.out.println(&quot;\n=== Emailing all Draftees ===&quot;);
-      robo.emailContacts(pl,
-          new MyTest&lt;Person&gt;(){
-            @Override
-            public boolean test(Person p){
-              return p.getAge() &gt;= 18 &amp;&amp; p.getAge() &lt;= 25 &amp;&amp; p.getGender() == Gender.MALE;
-            }
-          }
-      );
-
-
-      System.out.println(&quot;\n=== Mail all Pilots ===&quot;);
-      robo.mailContacts(pl,
-          new MyTest&lt;Person&gt;(){
-            @Override
-            public boolean test(Person p){
-              return p.getAge() &gt;= 23 &amp;&amp; p.getAge() &lt;= 65;
-            }
-          }
-      );
-     }
-}
-</code></pre><p>  仅通过java8之前得方式，程序看起来已经符合OCP的原则；在前面提到过SAM这种形式是可以用，lambda来表示的。那么看看如何去用lambda,来进一步的优化上面的程序</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line">public class RoboCallTest03 &#123;</span><br><span class="line"></span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line"></span><br><span class="line">      List&lt;Person&gt; pl = Person.createShortList();</span><br><span class="line">      RoboContactsAnon robo = new RoboContactsAnon();</span><br><span class="line"></span><br><span class="line">      System.out.println(&quot;\n==== Test 03 ====&quot;);</span><br><span class="line">      System.out.println(&quot;\n=== Calling all Drivers ===&quot;);</span><br><span class="line">      robo.phoneContacts(pl,</span><br><span class="line">          new MyTest&lt;Person&gt;()&#123;</span><br><span class="line">            @Override</span><br><span class="line">            public boolean test(Person p)&#123;</span><br><span class="line">              return p.getAge() &gt;=16;</span><br><span class="line">            &#125;</span><br><span class="line">          &#125;</span><br><span class="line">      );</span><br><span class="line"></span><br><span class="line">      System.out.println(&quot;\n=== Emailing all Draftees ===&quot;);</span><br><span class="line">      robo.emailContacts(pl,</span><br><span class="line">          new MyTest&lt;Person&gt;()&#123;</span><br><span class="line">            @Override</span><br><span class="line">            public boolean test(Person p)&#123;</span><br><span class="line">              return p.getAge() &gt;= 18 &amp;&amp; p.getAge() &lt;= 25 &amp;&amp; p.getGender() == Gender.MALE;</span><br><span class="line">            &#125;</span><br><span class="line">          &#125;</span><br><span class="line">      );</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">      System.out.println(&quot;\n=== Mail all Pilots ===&quot;);</span><br><span class="line">      robo.mailContacts(pl,</span><br><span class="line">          new MyTest&lt;Person&gt;()&#123;</span><br><span class="line">            @Override</span><br><span class="line">            public boolean test(Person p)&#123;</span><br><span class="line">              return p.getAge() &gt;= 23 &amp;&amp; p.getAge() &lt;= 65;</span><br><span class="line">            &#125;</span><br><span class="line">          &#125;</span><br><span class="line">      );</span><br><span class="line">  	  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>  仅通过java8之前得方式，程序看起来已经符合OCP的原则；在前面提到过SAM这种形式是可以用，lambda来表示的。那么看看如何去用lambda,来进一步的优化上面的程序</p>
 <blockquote>
 <p>lambda 优化</p>
 </blockquote>
-<p> 在java.util.function包中提供了一种形式类似的MyTest的接口，Predicate<t>；</t></p>
-<pre><code>public interface Predicate&lt;T&gt; {
-  public boolean test(T t);
-}
-</code></pre><blockquote>
+<p> 在java.util.function包中提供了一种形式类似的MyTest的接口，Predicate<t>：</t></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">public interface Predicate&lt;T&gt; &#123;</span><br><span class="line">   public boolean test(T t);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
 <p>RoboContactsLambda.java</p>
 </blockquote>
-<pre><code>package com.example.lambda;
-import java.util.List;
-import java.util.function.Predicate;
-
-/**
- * @authorzhoukan
- */
-public class RoboContactLambda {
-    public void phoneContacts(List&lt;Person&gt; pl, Predicate&lt;Person&gt; pred) {
-        for (Person p : pl) {
-            if (pred.test(p)) {
-                roboCall(p);
-            }
-        }
-    }
-
-    public void emailContacts(List&lt;Person&gt; pl, Predicate&lt;Person&gt; pred) {
-        for (Person p : pl) {
-            if (pred.test(p)) {
-                roboEmail(p);
-            }
-        }
-    }
-
-    public void mailContacts(List&lt;Person&gt; pl, Predicate&lt;Person&gt; pred) {
-        for (Person p : pl) {
-            if (pred.test(p)) {
-                roboMail(p);
-            }
-        }
-    }
-
-    public void roboCall(Person p) {
-        System.out.println(&quot;Calling &quot; + p.getGivenName() + &quot; &quot; + p.getSurName() + &quot; age &quot; + p.getAge() + &quot; at &quot; + p.getPhone());
-    }
-
-    public void roboEmail(Person p) {
-        System.out.println(&quot;EMailing &quot; + p.getGivenName() + &quot; &quot; + p.getSurName() + &quot; age &quot; + p.getAge() + &quot; at &quot; + p.getEmail());
-    }
-
-    public void roboMail(Person p) {
-        System.out.println(&quot;Mailing &quot; + p.getGivenName() + &quot; &quot; + p.getSurName() + &quot; age &quot; + p.getAge() + &quot; at &quot; + p.getAddress());
-    }
-}
-</code></pre><p> Mytest接口被更换成了Predicate,调用程序的代码片段如下</p>
-<pre><code>public static void main(String[] args){ 
-
-     List&lt;Person&gt; pl = Person.createShortList();
-     RoboContactLambda robo = new RoboContactLambda();
-
-     Predicate&lt;Person&gt; allDrivers = p -&gt; p.getAge() &gt;= 16;
-     robo.phoneContacts(pl, allDrivers);
-}
-</code></pre><p> 当然即使不适用util.function提供的接口，也是可以实现了，只要满足lambda表达式的场景就好：</p>
-<pre><code>   robo.mailContacts(pl,
-  /*new MyTest&lt;Person&gt;(){
-    @Override
-    public boolean test(Person p){
-      return p.getAge() &gt;= 23 &amp;&amp; p.getAge() &lt;= 65;
-    }
-  }*/
-        (p) -&gt; p.getAge() &gt; 23 &amp;&amp; p.getAge() &lt;= 65
-);
-</code></pre><h2 id="The-java-util-function-包"><a href="#The-java-util-function-包" class="headerlink" title="The java.util.function 包"></a>The java.util.function 包</h2><p> function包提供了几种方便去使用lambda的interface，当然不仅仅是给lambda表达式使用，所有诸如上述的优化都是可以考虑用这些方法的，确实我看到这里就有点抑制不住内心的小狂喜，lambda的这些function不就是Rxjava中常用的操作符嘛，这么麻烦的工作算是没白做，就下面的需求，我们来体验一下她的魅力。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line">package com.example.lambda;</span><br><span class="line">import java.util.List;</span><br><span class="line">import java.util.function.Predicate;</span><br><span class="line"></span><br><span class="line">/**</span><br><span class="line"> * @authorzhoukan</span><br><span class="line"> */</span><br><span class="line">public class RoboContactLambda &#123;</span><br><span class="line">    public void phoneContacts(List&lt;Person&gt; pl, Predicate&lt;Person&gt; pred) &#123;</span><br><span class="line">        for (Person p : pl) &#123;</span><br><span class="line">            if (pred.test(p)) &#123;</span><br><span class="line">                roboCall(p);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public void emailContacts(List&lt;Person&gt; pl, Predicate&lt;Person&gt; pred) &#123;</span><br><span class="line">        for (Person p : pl) &#123;</span><br><span class="line">            if (pred.test(p)) &#123;</span><br><span class="line">                roboEmail(p);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public void mailContacts(List&lt;Person&gt; pl, Predicate&lt;Person&gt; pred) &#123;</span><br><span class="line">        for (Person p : pl) &#123;</span><br><span class="line">            if (pred.test(p)) &#123;</span><br><span class="line">                roboMail(p);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public void roboCall(Person p) &#123;</span><br><span class="line">        System.out.println(&quot;Calling &quot; + p.getGivenName() + &quot; &quot; + p.getSurName() + &quot; age &quot; + p.getAge() + &quot; at &quot; + p.getPhone());</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public void roboEmail(Person p) &#123;</span><br><span class="line">        System.out.println(&quot;EMailing &quot; + p.getGivenName() + &quot; &quot; + p.getSurName() + &quot; age &quot; + p.getAge() + &quot; at &quot; + p.getEmail());</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public void roboMail(Person p) &#123;</span><br><span class="line">        System.out.println(&quot;Mailing &quot; + p.getGivenName() + &quot; &quot; + p.getSurName() + &quot; age &quot; + p.getAge() + &quot; at &quot; + p.getAddress());</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p> Mytest接口被更换成了Predicate,调用程序的代码片段如下</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">public static void main(String[] args)&#123; </span><br><span class="line">	</span><br><span class="line">	 List&lt;Person&gt; pl = Person.createShortList();</span><br><span class="line">     RoboContactLambda robo = new RoboContactLambda();</span><br><span class="line"></span><br><span class="line">	 Predicate&lt;Person&gt; allDrivers = p -&gt; p.getAge() &gt;= 16;</span><br><span class="line">        robo.phoneContacts(pl, allDrivers);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p> 当然即使不适用util.function提供的接口，也是可以实现了，只要满足lambda表达式的场景就好：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">robo.mailContacts(pl,</span><br><span class="line">     /*new MyTest&lt;Person&gt;()&#123;</span><br><span class="line">       @Override</span><br><span class="line">       public boolean test(Person p)&#123;</span><br><span class="line">         return p.getAge() &gt;= 23 &amp;&amp; p.getAge() &lt;= 65;</span><br><span class="line">       &#125;</span><br><span class="line">     &#125;*/</span><br><span class="line">           (p) -&gt; p.getAge() &gt; 23 &amp;&amp; p.getAge() &lt;= 65</span><br><span class="line">   );</span><br></pre></td></tr></table></figure></p>
+<h2 id="The-java-util-function-包"><a href="#The-java-util-function-包" class="headerlink" title="The java.util.function 包"></a>The java.util.function 包</h2><p> function包提供了几种方便去使用lambda的interface，当然不仅仅是给lambda表达式使用，所有诸如上述的优化都是可以考虑用这些方法的，确实我看到这里就有点抑制不住内心的小狂喜，lambda的这些function不就是Rxjava中常用的操作符嘛，这么麻烦的工作算是没白做，就下面的需求，我们来体验一下她的魅力。</p>
 <ul>
 <li>Predicate: A property of the object passed as argument</li>
 <li>Consumer: An action to be performed with the object passed as argument</li>
@@ -597,187 +248,21 @@ public class RoboContactLambda {
 <p>输出东方人和西方人的信息</p>
 </blockquote>
 <p>  上面的personList（求职者），要将他们的信息分别发给，老板和老板娘，他们一个是中国人，一个是美国人；由于习惯不同，西方习惯姓在后名在前（分别对应Given name 和 surname），中国的习惯我就不提了。</p>
-<h4 id="传统的方式"><a href="#传统的方式" class="headerlink" title="传统的方式"></a>传统的方式</h4><p>  person.java</p>
-<pre><code>   public void printWesternName() {
-
-    System.out.println(&quot;\nName: &quot; + this.getGivenName() + &quot; &quot; + this.getSurName() + &quot;\n&quot; +
-            &quot;Age: &quot; + this.getAge() + &quot;  &quot; + &quot;Gender: &quot; + this.getGender() + &quot;\n&quot; +
-            &quot;EMail: &quot; + this.geteMail() + &quot;\n&quot; +
-            &quot;Phone: &quot; + this.getPhone() + &quot;\n&quot; +
-            &quot;Address: &quot; + this.getAddress());
-}
-
-
-public void printEasternName() {
-
-    System.out.println(&quot;\nName: &quot; + this.getSurName() + &quot; &quot; + this.getGivenName() + &quot;\n&quot; +
-            &quot;Age: &quot; + this.getAge() + &quot;  &quot; + &quot;Gender: &quot; + this.getGender() + &quot;\n&quot; +
-            &quot;EMail: &quot; + this.geteMail() + &quot;\n&quot; +
-            &quot;Phone: &quot; + this.getPhone() + &quot;\n&quot; +
-            &quot;Address: &quot; + this.getAddress());
-}  
-</code></pre><h4 id="使用Function-Interface的方式"><a href="#使用Function-Interface的方式" class="headerlink" title="使用Function Interface的方式"></a>使用Function Interface的方式</h4><pre><code> public interface Function&lt;R,T&gt;{
-    public R apply(T t);
-}
-</code></pre><p>  指定两个泛型以T作为输入，R作为输出，那么对于上述场景而言 -&gt; Function&lt;string,person&gt;，用function来更灵活的实现打印方法：</p>
+<h4 id="传统的方式"><a href="#传统的方式" class="headerlink" title="传统的方式"></a>传统的方式</h4><blockquote>
+<p>person.java</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">public void printWesternName() &#123;</span><br><span class="line"></span><br><span class="line">    System.out.println(&quot;\nName: &quot; + this.getGivenName() + &quot; &quot; + this.getSurName() + &quot;\n&quot; +</span><br><span class="line">            &quot;Age: &quot; + this.getAge() + &quot;  &quot; + &quot;Gender: &quot; + this.getGender() + &quot;\n&quot; +</span><br><span class="line">            &quot;EMail: &quot; + this.geteMail() + &quot;\n&quot; +</span><br><span class="line">            &quot;Phone: &quot; + this.getPhone() + &quot;\n&quot; +</span><br><span class="line">            &quot;Address: &quot; + this.getAddress());</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">public void printEasternName() &#123;</span><br><span class="line"></span><br><span class="line">    System.out.println(&quot;\nName: &quot; + this.getSurName() + &quot; &quot; + this.getGivenName() + &quot;\n&quot; +</span><br><span class="line">            &quot;Age: &quot; + this.getAge() + &quot;  &quot; + &quot;Gender: &quot; + this.getGender() + &quot;\n&quot; +</span><br><span class="line">            &quot;EMail: &quot; + this.geteMail() + &quot;\n&quot; +</span><br><span class="line">            &quot;Phone: &quot; + this.getPhone() + &quot;\n&quot; +</span><br><span class="line">            &quot;Address: &quot; + this.getAddress());</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="使用Function-Interface的方式"><a href="#使用Function-Interface的方式" class="headerlink" title="使用Function Interface的方式"></a>使用Function Interface的方式</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">public interface Function&lt;R,T&gt;&#123;</span><br><span class="line">    public R apply(T t);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>  指定两个泛型以T作为输入，R作为输出，那么对于上述场景而言 -&gt; Function&lt;string,person&gt;，用function来更灵活的实现打印方法：</p>
 <p>  Person.java</p>
-<pre><code>public String printCustom(Function &lt;Person, String&gt; f){
-      return f.apply(this);
-}
-</code></pre><blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">public String printCustom(Function &lt;Person, String&gt; f)&#123;</span><br><span class="line">      return f.apply(this);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
 <p>调用程序 NameTestNew.java</p>
 </blockquote>
-<pre><code>  public class NameTestNew {
-    public static void main(String[] args) {
-
-        System.out.println(&quot;\n==== NameTestNew02 ===&quot;);
-
-        List&lt;Person&gt; list1 = Person.createShortList();
-
-        // Print Custom First Name and e-mail
-        System.out.println(&quot;===Custom List===&quot;);
-        for (Person person : list1) {
-            System.out.println(
-                    person.printCustom(p -&gt; &quot;Name: &quot; + p.getGivenName() + &quot; EMail: &quot; + p.getEmail())
-            );
-        }
-
-
-        // Define Western and Eastern Lambdas
-
-        Function&lt;Person, String&gt; westernStyle = p -&gt; {
-            return &quot;\nName: &quot; + p.getGivenName() + &quot; &quot; + p.getSurName() + &quot;\n&quot; +
-                    &quot;Age: &quot; + p.getAge() + &quot;  &quot; + &quot;Gender: &quot; + p.getGender() + &quot;\n&quot; +
-                    &quot;EMail: &quot; + p.getEmail() + &quot;\n&quot; +
-                    &quot;Phone: &quot; + p.getPhone() + &quot;\n&quot; +
-                    &quot;Address: &quot; + p.getAddress();
-        };
-
-        Function&lt;Person, String&gt; easternStyle = p -&gt; &quot;\nName: &quot; + p.getSurName() + &quot; &quot;
-                + p.getGivenName() + &quot;\n&quot; + &quot;Age: &quot; + p.getAge() + &quot;  &quot; +
-                &quot;Gender: &quot; + p.getGender() + &quot;\n&quot; +
-                &quot;EMail: &quot; + p.getEmail() + &quot;\n&quot; +
-                &quot;Phone: &quot; + p.getPhone() + &quot;\n&quot; +
-                &quot;Address: &quot; + p.getAddress();
-
-        // Print Western List
-        System.out.println(&quot;\n===Western List===&quot;);
-        for (Person person : list1) {
-            System.out.println(
-                    person.printCustom(westernStyle)
-            );
-        }
-
-        // Print Eastern List
-        System.out.println(&quot;\n===Eastern List===&quot;);
-        for (Person person : list1) {
-            System.out.println(
-                    person.printCustom(easternStyle)
-            );
-        }
-
-
-    }
-} 
-</code></pre><p> 第一次循环只输出了名和email,所有有效的表达式都能作为printCustom的参数；第二次，首先将东方人和西方人的输出方式定义为Fucntion，并当作参数传入printCustom中。lambda表达式利于扩展和反复利用的优势得以体现。</p>
-<h4 id="输出"><a href="#输出" class="headerlink" title="输出"></a>输出</h4><pre><code>==== NameTestNew02 ===
-===Custom List===
-Name: Bob EMail: bob.baker@example.com
-Name: Jane EMail: jane.doe@example.com
-Name: John EMail: john.doe@example.com
-Name: James EMail: james.johnson@example.com
-Name: Joe EMail: joebob.bailey@example.com
-Name: Phil EMail: phil.smith@examp;e.com
-Name: Betty EMail: betty.jones@example.com
-
-===Western List===
-
-Name: Bob Baker
-Age: 21  Gender: MALE
-EMail: bob.baker@example.com
-Phone: 201-121-4678
-Address: 44 4th St, Smallville, KS 12333
-
-Name: Jane Doe
-Age: 25  Gender: FEMALE
-EMail: jane.doe@example.com
-Phone: 202-123-4678
-Address: 33 3rd St, Smallville, KS 12333
-
-Name: John Doe
-Age: 25  Gender: MALE
-EMail: john.doe@example.com
-Phone: 202-123-4678
-Address: 33 3rd St, Smallville, KS 12333
-
-Name: James Johnson
-Age: 45  Gender: MALE
-EMail: james.johnson@example.com
-Phone: 333-456-1233
-Address: 201 2nd St, New York, NY 12111
-
-Name: Joe Bailey
-Age: 67  Gender: MALE
-EMail: joebob.bailey@example.com
-Phone: 112-111-1111
-Address: 111 1st St, Town, CA 11111
-
-Name: Phil Smith
-Age: 55  Gender: MALE
-EMail: phil.smith@examp;e.com
-Phone: 222-33-1234
-Address: 22 2nd St, New Park, CO 222333
-
-Name: Betty Jones
-Age: 85  Gender: FEMALE
-EMail: betty.jones@example.com
-Phone: 211-33-1234
-Address: 22 4th St, New Park, CO 222333
-
-===Eastern List===
-
-Name: Baker Bob
-Age: 21  Gender: MALE
-EMail: bob.baker@example.com
-Phone: 201-121-4678
-Address: 44 4th St, Smallville, KS 12333
-
-Name: Doe Jane
-Age: 25  Gender: FEMALE
-EMail: jane.doe@example.com
-Phone: 202-123-4678
-Address: 33 3rd St, Smallville, KS 12333
-
-Name: Doe John
-Age: 25  Gender: MALE
-EMail: john.doe@example.com
-Phone: 202-123-4678
-Address: 33 3rd St, Smallville, KS 12333
-
-Name: Johnson James
-Age: 45  Gender: MALE
-EMail: james.johnson@example.com
-Phone: 333-456-1233
-Address: 201 2nd St, New York, NY 12111
-
-Name: Bailey Joe
-Age: 67  Gender: MALE
-EMail: joebob.bailey@example.com
-Phone: 112-111-1111
-Address: 111 1st St, Town, CA 11111
-
-Name: Smith Phil
-Age: 55  Gender: MALE
-EMail: phil.smith@examp;e.com
-Phone: 222-33-1234
-Address: 22 2nd St, New Park, CO 222333
-
-Name: Jones Betty
-Age: 85  Gender: FEMALE
-EMail: betty.jones@example.com
-Phone: 211-33-1234
-Address: 22 4th St, New Park, CO 222333
-</code></pre><h2 id="lambda表达式和集合"><a href="#lambda表达式和集合" class="headerlink" title="lambda表达式和集合"></a>lambda表达式和集合</h2><p> 体验过Function接口的优点还没完，java 8给我们的惊喜还不止这些。（不这些都不够，我必须是你近旁的一只木棉，根紧握地里，也相触云间 … 神特么的乱入），lambda基础部分结束后，来看看在集合方面它又有哪些优势。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br></pre></td><td class="code"><pre><span class="line">public class NameTestNew &#123;</span><br><span class="line">     public static void main(String[] args) &#123;</span><br><span class="line"></span><br><span class="line">         System.out.println(&quot;\n==== NameTestNew02 ===&quot;);</span><br><span class="line"></span><br><span class="line">         List&lt;Person&gt; list1 = Person.createShortList();</span><br><span class="line"></span><br><span class="line">         // Print Custom First Name and e-mail</span><br><span class="line">         System.out.println(&quot;===Custom List===&quot;);</span><br><span class="line">         for (Person person : list1) &#123;</span><br><span class="line">             System.out.println(</span><br><span class="line">                     person.printCustom(p -&gt; &quot;Name: &quot; + p.getGivenName() + &quot; EMail: &quot; + p.getEmail())</span><br><span class="line">             );</span><br><span class="line">         &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">         // Define Western and Eastern Lambdas</span><br><span class="line"></span><br><span class="line">         Function&lt;Person, String&gt; westernStyle = p -&gt; &#123;</span><br><span class="line">             return &quot;\nName: &quot; + p.getGivenName() + &quot; &quot; + p.getSurName() + &quot;\n&quot; +</span><br><span class="line">                     &quot;Age: &quot; + p.getAge() + &quot;  &quot; + &quot;Gender: &quot; + p.getGender() + &quot;\n&quot; +</span><br><span class="line">                     &quot;EMail: &quot; + p.getEmail() + &quot;\n&quot; +</span><br><span class="line">                     &quot;Phone: &quot; + p.getPhone() + &quot;\n&quot; +</span><br><span class="line">                     &quot;Address: &quot; + p.getAddress();</span><br><span class="line">         &#125;;</span><br><span class="line"></span><br><span class="line">         Function&lt;Person, String&gt; easternStyle = p -&gt; &quot;\nName: &quot; + p.getSurName() + &quot; &quot;</span><br><span class="line">                 + p.getGivenName() + &quot;\n&quot; + &quot;Age: &quot; + p.getAge() + &quot;  &quot; +</span><br><span class="line">                 &quot;Gender: &quot; + p.getGender() + &quot;\n&quot; +</span><br><span class="line">                 &quot;EMail: &quot; + p.getEmail() + &quot;\n&quot; +</span><br><span class="line">                 &quot;Phone: &quot; + p.getPhone() + &quot;\n&quot; +</span><br><span class="line">                 &quot;Address: &quot; + p.getAddress();</span><br><span class="line"></span><br><span class="line">         // Print Western List</span><br><span class="line">         System.out.println(&quot;\n===Western List===&quot;);</span><br><span class="line">         for (Person person : list1) &#123;</span><br><span class="line">             System.out.println(</span><br><span class="line">                     person.printCustom(westernStyle)</span><br><span class="line">             );</span><br><span class="line">         &#125;</span><br><span class="line"></span><br><span class="line">         // Print Eastern List</span><br><span class="line">         System.out.println(&quot;\n===Eastern List===&quot;);</span><br><span class="line">         for (Person person : list1) &#123;</span><br><span class="line">             System.out.println(</span><br><span class="line">                     person.printCustom(easternStyle)</span><br><span class="line">             );</span><br><span class="line">         &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">     &#125;</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
+<p> 第一次循环只输出了名和email,所有有效的表达式都能作为printCustom的参数；第二次，首先将东方人和西方人的输出方式定义为Fucntion，并当作参数传入printCustom中。lambda表达式利于扩展和反复利用的优势得以体现。</p>
+<h4 id="输出"><a href="#输出" class="headerlink" title="输出"></a>输出</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br></pre></td><td class="code"><pre><span class="line">==== NameTestNew02 ===</span><br><span class="line">===Custom List===</span><br><span class="line">Name: Bob EMail: bob.baker@example.com</span><br><span class="line">Name: Jane EMail: jane.doe@example.com</span><br><span class="line">Name: John EMail: john.doe@example.com</span><br><span class="line">Name: James EMail: james.johnson@example.com</span><br><span class="line">Name: Joe EMail: joebob.bailey@example.com</span><br><span class="line">Name: Phil EMail: phil.smith@examp;e.com</span><br><span class="line">Name: Betty EMail: betty.jones@example.com</span><br><span class="line"></span><br><span class="line">===Western List===</span><br><span class="line"></span><br><span class="line">Name: Bob Baker</span><br><span class="line">Age: 21  Gender: MALE</span><br><span class="line">EMail: bob.baker@example.com</span><br><span class="line">Phone: 201-121-4678</span><br><span class="line">Address: 44 4th St, Smallville, KS 12333</span><br><span class="line"></span><br><span class="line">Name: Jane Doe</span><br><span class="line">Age: 25  Gender: FEMALE</span><br><span class="line">EMail: jane.doe@example.com</span><br><span class="line">Phone: 202-123-4678</span><br><span class="line">Address: 33 3rd St, Smallville, KS 12333</span><br><span class="line"></span><br><span class="line">Name: John Doe</span><br><span class="line">Age: 25  Gender: MALE</span><br><span class="line">EMail: john.doe@example.com</span><br><span class="line">Phone: 202-123-4678</span><br><span class="line">Address: 33 3rd St, Smallville, KS 12333</span><br><span class="line"></span><br><span class="line">Name: James Johnson</span><br><span class="line">Age: 45  Gender: MALE</span><br><span class="line">EMail: james.johnson@example.com</span><br><span class="line">Phone: 333-456-1233</span><br><span class="line">Address: 201 2nd St, New York, NY 12111</span><br><span class="line"></span><br><span class="line">Name: Joe Bailey</span><br><span class="line">Age: 67  Gender: MALE</span><br><span class="line">EMail: joebob.bailey@example.com</span><br><span class="line">Phone: 112-111-1111</span><br><span class="line">Address: 111 1st St, Town, CA 11111</span><br><span class="line"></span><br><span class="line">Name: Phil Smith</span><br><span class="line">Age: 55  Gender: MALE</span><br><span class="line">EMail: phil.smith@examp;e.com</span><br><span class="line">Phone: 222-33-1234</span><br><span class="line">Address: 22 2nd St, New Park, CO 222333</span><br><span class="line"></span><br><span class="line">Name: Betty Jones</span><br><span class="line">Age: 85  Gender: FEMALE</span><br><span class="line">EMail: betty.jones@example.com</span><br><span class="line">Phone: 211-33-1234</span><br><span class="line">Address: 22 4th St, New Park, CO 222333</span><br><span class="line"></span><br><span class="line">===Eastern List===</span><br><span class="line"></span><br><span class="line">Name: Baker Bob</span><br><span class="line">Age: 21  Gender: MALE</span><br><span class="line">EMail: bob.baker@example.com</span><br><span class="line">Phone: 201-121-4678</span><br><span class="line">Address: 44 4th St, Smallville, KS 12333</span><br><span class="line"></span><br><span class="line">Name: Doe Jane</span><br><span class="line">Age: 25  Gender: FEMALE</span><br><span class="line">EMail: jane.doe@example.com</span><br><span class="line">Phone: 202-123-4678</span><br><span class="line">Address: 33 3rd St, Smallville, KS 12333</span><br><span class="line"></span><br><span class="line">Name: Doe John</span><br><span class="line">Age: 25  Gender: MALE</span><br><span class="line">EMail: john.doe@example.com</span><br><span class="line">Phone: 202-123-4678</span><br><span class="line">Address: 33 3rd St, Smallville, KS 12333</span><br><span class="line"></span><br><span class="line">Name: Johnson James</span><br><span class="line">Age: 45  Gender: MALE</span><br><span class="line">EMail: james.johnson@example.com</span><br><span class="line">Phone: 333-456-1233</span><br><span class="line">Address: 201 2nd St, New York, NY 12111</span><br><span class="line"></span><br><span class="line">Name: Bailey Joe</span><br><span class="line">Age: 67  Gender: MALE</span><br><span class="line">EMail: joebob.bailey@example.com</span><br><span class="line">Phone: 112-111-1111</span><br><span class="line">Address: 111 1st St, Town, CA 11111</span><br><span class="line"></span><br><span class="line">Name: Smith Phil</span><br><span class="line">Age: 55  Gender: MALE</span><br><span class="line">EMail: phil.smith@examp;e.com</span><br><span class="line">Phone: 222-33-1234</span><br><span class="line">Address: 22 2nd St, New Park, CO 222333</span><br><span class="line"></span><br><span class="line">Name: Jones Betty</span><br><span class="line">Age: 85  Gender: FEMALE</span><br><span class="line">EMail: betty.jones@example.com</span><br><span class="line">Phone: 211-33-1234</span><br><span class="line">Address: 22 4th St, New Park, CO 222333</span><br></pre></td></tr></table></figure>
+<h2 id="lambda表达式和集合"><a href="#lambda表达式和集合" class="headerlink" title="lambda表达式和集合"></a>lambda表达式和集合</h2><p> 体验过Function接口的优点还没完，java 8给我们的惊喜还不止这些。（不这些都不够，我必须是你近旁的一只木棉，根紧握地里，也相触云间 … 神特么的乱入），lambda基础部分结束后，来看看在集合方面它又有哪些优势。</p>
 <p> 先看看有哪些不一样的操作符：</p>
 <ul>
 <li>forEach</li>
@@ -789,96 +274,22 @@ Address: 22 4th St, New Park, CO 222333
 <blockquote>
 <p>1.添加新的类，将查询条件全部封装进HashMap中<br></p>
 </blockquote>
-<pre><code>public class SearchCriteria {
-
-    private final Map&lt;String, MyTest&lt;Person&gt;&gt; searchMap = new HashMap&lt;&gt;();
-
-    private SearchCriteria() {
-        super();
-        initSearchMap();
-    }
-
-    private void initSearchMap() {
-        MyTest&lt;Person&gt; allDrivers = p -&gt; p.getAge() &gt;= 16;
-        MyTest&lt;Person&gt; allDraftees = p -&gt; p.getAge() &gt;= 18 &amp;&amp; p.getAge() &lt;= 25 &amp;&amp; p.getGender() == Gender.MALE;
-        MyTest&lt;Person&gt; allPilots = p -&gt; p.getAge() &gt;= 23 &amp;&amp; p.getAge() &lt;= 65;
-
-        searchMap.put(&quot;allDrivers&quot;, allDrivers);
-        searchMap.put(&quot;allDraftees&quot;, allDraftees);
-        searchMap.put(&quot;allPilots&quot;, allPilots);
-
-    }
-
-    public MyTest&lt;Person&gt; getCriteria(String PredicateName) {
-        MyTest&lt;Person&gt; target;
-
-        target = searchMap.get(PredicateName);
-
-        if (target == null) {
-
-            System.out.println(&quot;Search Criteria not found... &quot;);
-            System.exit(1);
-
-        }
-
-        return target;
-
-    }
-
-    public static SearchCriteria getInstance() {
-        return new SearchCriteria();
-    }
-
-}
-</code></pre><blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line">public class SearchCriteria &#123;</span><br><span class="line"></span><br><span class="line">    private final Map&lt;String, MyTest&lt;Person&gt;&gt; searchMap = new HashMap&lt;&gt;();</span><br><span class="line"></span><br><span class="line">    private SearchCriteria() &#123;</span><br><span class="line">        super();</span><br><span class="line">        initSearchMap();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    private void initSearchMap() &#123;</span><br><span class="line">        MyTest&lt;Person&gt; allDrivers = p -&gt; p.getAge() &gt;= 16;</span><br><span class="line">        MyTest&lt;Person&gt; allDraftees = p -&gt; p.getAge() &gt;= 18 &amp;&amp; p.getAge() &lt;= 25 &amp;&amp; p.getGender() == Gender.MALE;</span><br><span class="line">        MyTest&lt;Person&gt; allPilots = p -&gt; p.getAge() &gt;= 23 &amp;&amp; p.getAge() &lt;= 65;</span><br><span class="line"></span><br><span class="line">        searchMap.put(&quot;allDrivers&quot;, allDrivers);</span><br><span class="line">        searchMap.put(&quot;allDraftees&quot;, allDraftees);</span><br><span class="line">        searchMap.put(&quot;allPilots&quot;, allPilots);</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public MyTest&lt;Person&gt; getCriteria(String PredicateName) &#123;</span><br><span class="line">        MyTest&lt;Person&gt; target;</span><br><span class="line"></span><br><span class="line">        target = searchMap.get(PredicateName);</span><br><span class="line"></span><br><span class="line">        if (target == null) &#123;</span><br><span class="line"></span><br><span class="line">            System.out.println(&quot;Search Criteria not found... &quot;);</span><br><span class="line">            System.exit(1);</span><br><span class="line"></span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        return target;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public static SearchCriteria getInstance() &#123;</span><br><span class="line">        return new SearchCriteria();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
 <p>2.Looping<br></p>
 </blockquote>
 <blockquote>
 <p>Test01ForEach.java</p>
 </blockquote>
-<pre><code>public static void main(String[] args) {
-
-    List&lt;Person&gt; pl = Person.createShortList();
-
-    System.out.println(&quot;\n=== Western Phone List ===&quot;);
-    pl.forEach(p -&gt; p.printWesternName());
-
-    System.out.println(&quot;\n=== Eastern Phone List ===&quot;);
-    pl.forEach(Person::printEasternName);
-
-    System.out.println(&quot;\n=== Custom Phone List ===&quot;);
-    pl.forEach(p -&gt; {
-        System.out.println(p.printCustom(r -&gt; &quot;Name: &quot; + r.getGivenName() + &quot; EMail: &quot; + r.getEmail()));
-    });
-
-}
-</code></pre><blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">public static void main(String[] args) &#123;</span><br><span class="line"></span><br><span class="line">       List&lt;Person&gt; pl = Person.createShortList();</span><br><span class="line"></span><br><span class="line">       System.out.println(&quot;\n=== Western Phone List ===&quot;);</span><br><span class="line">       pl.forEach(p -&gt; p.printWesternName());</span><br><span class="line"></span><br><span class="line">       System.out.println(&quot;\n=== Eastern Phone List ===&quot;);</span><br><span class="line">       pl.forEach(Person::printEasternName);</span><br><span class="line"></span><br><span class="line">       System.out.println(&quot;\n=== Custom Phone List ===&quot;);</span><br><span class="line">       pl.forEach(p -&gt; &#123;</span><br><span class="line">           System.out.println(p.printCustom(r -&gt; &quot;Name: &quot; + r.getGivenName() + &quot; EMail: &quot; + r.getEmail()));</span><br><span class="line">       &#125;);</span><br><span class="line"></span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
 <p>3.链式调用和过滤器<br></p>
 </blockquote>
 <blockquote>
-<p>Test02Filter.java<br>    public class Test02Filter {</p>
+<p>Test02Filter.java</p>
 </blockquote>
-<pre><code>    public static void main(String[] args) {
-
-        List&lt;Person&gt; pl = Person.createShortList();
-
-        SearchCriteria search = SearchCriteria.getInstance();
-
-        System.out.println(&quot;\n=== Western Pilot Phone List ===&quot;);
-
-        pl.stream().filter(search.getCriteria(&quot;allPilots&quot;))
-                .forEach(Person::printWesternName);
-
-
-        System.out.println(&quot;\n=== Eastern Draftee Phone List ===&quot;);
-
-        pl.stream().filter(search.getCriteria(&quot;allDraftees&quot;))
-                .forEach(Person::printEasternName);
-
-    }
-
-}
-</code></pre><blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">public class Test02Filter &#123;</span><br><span class="line"></span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line"></span><br><span class="line">        List&lt;Person&gt; pl = Person.createShortList();</span><br><span class="line"></span><br><span class="line">        SearchCriteria search = SearchCriteria.getInstance();</span><br><span class="line"></span><br><span class="line">        System.out.println(&quot;\n=== Western Pilot Phone List ===&quot;);</span><br><span class="line"></span><br><span class="line">        pl.stream().filter(search.getCriteria(&quot;allPilots&quot;))</span><br><span class="line">                .forEach(Person::printWesternName);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        System.out.println(&quot;\n=== Eastern Draftee Phone List ===&quot;);</span><br><span class="line"></span><br><span class="line">        pl.stream().filter(search.getCriteria(&quot;allDraftees&quot;))</span><br><span class="line">                .forEach(Person::printEasternName);</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
 <p>4.getting Lazy<br></p>
 </blockquote>
 <p>  由于篇幅过长，写的有点疲惫，细枝末节的地方，可能没描述清楚，留言里面见；当然这个getting lazy说的并不是我懒</p>
@@ -894,27 +305,7 @@ Address: 22 4th St, New Park, CO 222333
 <blockquote>
 <p>Test03toList.java</p>
 </blockquote>
-<pre><code>public class Test03toList {
-
-public static void main(String[] args) {
-
-         List&lt;Person&gt; pl = Person.createShortList();
-
-         SearchCriteria search = SearchCriteria.getInstance();
-
-         // Make a new list after filtering.
-         List&lt;Person&gt; pilotList = pl
-                 .stream()
-                 .filter(search.getCriteria(&quot;allPilots&quot;))
-                 .collect(Collectors.toList());
-
-         System.out.println(&quot;\n=== Western Pilot Phone List ===&quot;);
-         pilotList.forEach(Person::printWesternName);
-
-       }
-
-}
-</code></pre><p> .collect(Collectors.toList()); 返回一个新的collection</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">public class Test03toList &#123;</span><br><span class="line"></span><br><span class="line">   public static void main(String[] args) &#123;</span><br><span class="line"></span><br><span class="line">            List&lt;Person&gt; pl = Person.createShortList();</span><br><span class="line"></span><br><span class="line">            SearchCriteria search = SearchCriteria.getInstance();</span><br><span class="line"></span><br><span class="line">            // Make a new list after filtering.</span><br><span class="line">            List&lt;Person&gt; pilotList = pl</span><br><span class="line">                    .stream()</span><br><span class="line">                    .filter(search.getCriteria(&quot;allPilots&quot;))</span><br><span class="line">                    .collect(Collectors.toList());</span><br><span class="line"></span><br><span class="line">            System.out.println(&quot;\n=== Western Pilot Phone List ===&quot;);</span><br><span class="line">            pilotList.forEach(Person::printWesternName);</span><br><span class="line"></span><br><span class="line">          &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.collect(Collectors.toList()); 返回一个新的collection</span><br></pre></td></tr></table></figure>
 <blockquote>
 <p>集合中的计算</p>
 </blockquote>
@@ -922,53 +313,9 @@ public static void main(String[] args) {
 <blockquote>
 <p>Test04Map.java</p>
 </blockquote>
-<pre><code>public class Test04Map {
-
-public static void main(String[] args) {
-     List&lt;Person&gt; pl = Person.createShortList();
-
-     SearchCriteria search = SearchCriteria.getInstance();
-
-     // Calc average age of pilots old style
-     System.out.println(&quot;== Calc Old Style ==&quot;);
-     int sum = 0;
-     int count = 0;
-
-     for (Person p:pl){
-       if (p.getAge() &gt;= 23 &amp;&amp; p.getAge() &lt;= 65 ){
-         sum = sum + p.getAge();
-         count++;
-       }
-     }
-
-     long average = sum / count;
-     System.out.println(&quot;Total Ages: &quot; + sum);
-     System.out.println(&quot;Average Age: &quot; + average);
-
-
-     // Get sum of ages
-     System.out.println(&quot;\n== Calc New Style ==&quot;);
-     long totalAge = pl
-             .stream()
-             .filter(search.getCriteria(&quot;allPilots&quot;))
-             .mapToInt(p -&gt; p.getAge())
-             .sum();
-
-     // Get average of ages
-     OptionalDouble averageAge = pl
-             .parallelStream()
-             .filter(search.getCriteria(&quot;allPilots&quot;))
-             .mapToDouble(p -&gt; p.getAge())
-             .average();
-
-     System.out.println(&quot;Total Ages: &quot; + totalAge);
-     System.out.println(&quot;Average Age: &quot; + averageAge.getAsDouble());
-
-   }
-
-}
-</code></pre><h2 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h2><p>  总算是写完了，博客后面写得不是很走心，但是还是比较开心，有一次通过官方文档，完成了一个知识点：另外由于篇幅问题，Android Studio中如何引入java 8将在另外一篇博客中说明，lambda就到这里了，欢迎勘误。</p>
-<h4 id="文档-："><a href="#文档-：" class="headerlink" title="文档 ："></a>文档 ：</h4><p> <a href="http://www.oracle.com/webfolder/technetwork/tutorials/obe/java/Lambda-QuickStart/index.html#section3" target="_blank" rel="noopener">oracle 官方教程</a></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line">public class Test04Map &#123;</span><br><span class="line"></span><br><span class="line">   public static void main(String[] args) &#123;</span><br><span class="line">        List&lt;Person&gt; pl = Person.createShortList();</span><br><span class="line"></span><br><span class="line">        SearchCriteria search = SearchCriteria.getInstance();</span><br><span class="line"></span><br><span class="line">        // Calc average age of pilots old style</span><br><span class="line">        System.out.println(&quot;== Calc Old Style ==&quot;);</span><br><span class="line">        int sum = 0;</span><br><span class="line">        int count = 0;</span><br><span class="line"></span><br><span class="line">        for (Person p:pl)&#123;</span><br><span class="line">          if (p.getAge() &gt;= 23 &amp;&amp; p.getAge() &lt;= 65 )&#123;</span><br><span class="line">            sum = sum + p.getAge();</span><br><span class="line">            count++;</span><br><span class="line">          &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        long average = sum / count;</span><br><span class="line">        System.out.println(&quot;Total Ages: &quot; + sum);</span><br><span class="line">        System.out.println(&quot;Average Age: &quot; + average);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        // Get sum of ages</span><br><span class="line">        System.out.println(&quot;\n== Calc New Style ==&quot;);</span><br><span class="line">        long totalAge = pl</span><br><span class="line">                .stream()</span><br><span class="line">                .filter(search.getCriteria(&quot;allPilots&quot;))</span><br><span class="line">                .mapToInt(p -&gt; p.getAge())</span><br><span class="line">                .sum();</span><br><span class="line"></span><br><span class="line">        // Get average of ages</span><br><span class="line">        OptionalDouble averageAge = pl</span><br><span class="line">                .parallelStream()</span><br><span class="line">                .filter(search.getCriteria(&quot;allPilots&quot;))</span><br><span class="line">                .mapToDouble(p -&gt; p.getAge())</span><br><span class="line">                .average();</span><br><span class="line"></span><br><span class="line">        System.out.println(&quot;Total Ages: &quot; + totalAge);</span><br><span class="line">        System.out.println(&quot;Average Age: &quot; + averageAge.getAsDouble());</span><br><span class="line"></span><br><span class="line">      &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h3><p>  总算是写完了，博客后面写得不是很走心，但是还是比较开心，又一次通过官方文档，完成了一个知识点：另外由于篇幅问题，Android Studio中如何引入java 8将在另外一篇博客中说明，lambda就到这里了，欢迎勘误。</p>
+<h3 id="参考文档"><a href="#参考文档" class="headerlink" title="参考文档"></a>参考文档</h3><p> <a href="http://www.oracle.com/webfolder/technetwork/tutorials/obe/java/Lambda-QuickStart/index.html#section3" target="_blank" rel="noopener">oracle 官方教程</a></p>
 
                 </div>
             </section>
@@ -1008,7 +355,7 @@ public static void main(String[] args) {
         </a>
     </div>
     <div class="toc-main">
-        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#介绍"><span class="toc-text">介绍</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#软硬件环境"><span class="toc-text">软硬件环境</span></a></li></ol><li class="toc-item toc-level-2"><a class="toc-link" href="#Lambda应用在那些场景呢？因为不知道怎么翻译合适就直接上英语了"><span class="toc-text">Lambda应用在那些场景呢？因为不知道怎么翻译合适就直接上英语了.</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Anonymous-Inner-Class"><span class="toc-text">Anonymous Inner Class</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Functional-Interface"><span class="toc-text">Functional Interface</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Lambda-Expression-Syntax"><span class="toc-text">Lambda Expression Syntax</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#lambda表达式实例"><span class="toc-text">lambda表达式实例</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Listener-Lambda"><span class="toc-text">Listener Lambda</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Comparator-Lambda"><span class="toc-text">Comparator Lambda</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Runnable-Lambda"><span class="toc-text">Runnable Lambda</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Improving-Code-with-Lambda-Expression"><span class="toc-text">Improving Code with Lambda Expression</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#The-java-util-function-包"><span class="toc-text">The java.util.function 包</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#传统的方式"><span class="toc-text">传统的方式</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#使用Function-Interface的方式"><span class="toc-text">使用Function Interface的方式</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#输出"><span class="toc-text">输出</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#lambda表达式和集合"><span class="toc-text">lambda表达式和集合</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#stream"><span class="toc-text">stream</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#结语"><span class="toc-text">结语</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#文档-："><span class="toc-text">文档 ：</span></a></li></ol></li>
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#Tips"><span class="toc-text">Tips</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#软硬件环境"><span class="toc-text">软硬件环境</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Lambda应用场景"><span class="toc-text">Lambda应用场景</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Anonymous-Inner-Class"><span class="toc-text">Anonymous Inner Class</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Functional-Interface"><span class="toc-text">Functional Interface</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Lambda-Expression-Syntax"><span class="toc-text">Lambda Expression Syntax</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#lambda表达式实例"><span class="toc-text">lambda表达式实例</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Listener-Lambda"><span class="toc-text">Listener Lambda</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Comparator-Lambda"><span class="toc-text">Comparator Lambda</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Runnable-Lambda"><span class="toc-text">Runnable Lambda</span></a></li></ol></li></ol><li class="toc-item toc-level-2"><a class="toc-link" href="#Improving-Code-with-Lambda-Expression"><span class="toc-text">Improving Code with Lambda Expression</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#The-java-util-function-包"><span class="toc-text">The java.util.function 包</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#传统的方式"><span class="toc-text">传统的方式</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#使用Function-Interface的方式"><span class="toc-text">使用Function Interface的方式</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#输出"><span class="toc-text">输出</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#lambda表达式和集合"><span class="toc-text">lambda表达式和集合</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#stream"><span class="toc-text">stream</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#结语"><span class="toc-text">结语</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#参考文档"><span class="toc-text">参考文档</span></a></li>
     </div>
 </div>
 
@@ -1026,7 +373,7 @@ public static void main(String[] args) {
 
 <article class="read-next-card" style="background-image: url(https://drscdn.500px.org/photo/282544705/q%3D80_h%3D300/v2?webp=true&sig=6be48a4fef3d251e96a44f3cde119e2dce64bca36ad48bdfb4815e38c074446b)">
   <header class="read-next-card-header">
-    <small class="read-next-card-header-sitetitle">&mdash; 梳碧湖砍柴人 &mdash;</small>
+    <small class="read-next-card-header-sitetitle">&mdash; ZkQueen &mdash;</small>
     <h3 class="read-next-card-header-title">Recent Posts</h3>
   </header>
   <div class="read-next-divider">
@@ -1040,20 +387,22 @@ public static void main(String[] args) {
       
       
       <li>
+        <a href="/2018/12/27/RxJava从操作符到内部流程（1）/">RxJava从操作符到内部流程（1）</a>
+      </li>
+      
+      
+      
+      <li>
         <a href="/2018/12/26/RxJava-学习计划/">RxJava 学习计划</a>
       </li>
       
       
       
       <li>
-        <a href="/2018/12/26/Java8-lambda表达式/">java 8 Lambda表达式</a>
+        <a href="/2018/12/26/Java8-lambda表达式/">java8 Lambda表达式</a>
       </li>
       
       
-      
-      <li>
-        <a href="/2018/12/26/About-me/">About me</a>
-      </li>
       
       
     </ul>
@@ -1072,6 +421,15 @@ public static void main(String[] args) {
             
             
 
+<article class="read-next-card" style="background-image: url(https://drscdn.500px.org/photo/282544705/q%3D80_h%3D300/v2?webp=true&sig=6be48a4fef3d251e96a44f3cde119e2dce64bca36ad48bdfb4815e38c074446b)">
+	<header class="read-next-card-header" style="padding-bottom: 20px">
+		<h3 class="read-next-card-header-title">Tag Cloud</h3>
+	</header>
+	<div class="read-next-card-content-ext">
+		<a href="/tags/Rxjava/" style="font-size: 24px;">Rxjava</a> <a href="/tags/java8新特性/" style="font-size: 14px;">java8新特性</a>
+	</div>
+</article>
+
             
         </div>
     </div>
@@ -1085,7 +443,7 @@ public static void main(String[] args) {
 <div id="search" class="search-overlay subscribe-overlay">
     <div class="search-form">
         
-        <img class="search-overlay-logo" src="https://i.loli.net/2017/11/26/5a19c0b50432e.png" alt="梳碧湖砍柴人">
+        <img class="search-overlay-logo" src="https://i.loli.net/2017/11/26/5a19c0b50432e.png" alt="ZkQueen">
         
         <input id="local-search-input" class="search-input" type="text" name="search" placeholder="Search ...">
         <a class="search-overlay-close" href="#"></a>
@@ -1097,7 +455,7 @@ public static void main(String[] args) {
 <footer class="site-footer outer">
 	<div class="site-footer-content inner">
 		<section class="copyright">
-			<a href="/" title="梳碧湖砍柴人">梳碧湖砍柴人</a>
+			<a href="/" title="ZkQueen">ZkQueen</a>
 			&copy; 2018
 		</section>
 		<nav class="site-footer-nav">
@@ -1129,15 +487,15 @@ public static void main(String[] args) {
 
 <div class="floating-header">
 	<div class="floating-header-logo">
-        <a href="/" title="梳碧湖砍柴人">
+        <a href="/" title="ZkQueen">
 			
-                <img src="https://i.loli.net/2017/11/26/5a19c0b50432e.png" alt="梳碧湖砍柴人 icon">
+                <img src="https://i.loli.net/2017/11/26/5a19c0b50432e.png" alt="ZkQueen icon">
 			
-            <span>梳碧湖砍柴人</span>
+            <span>ZkQueen</span>
         </a>
     </div>
     <span class="floating-header-divider">&mdash;</span>
-    <div class="floating-header-title">java 8 Lambda表达式</div>
+    <div class="floating-header-title">java8 Lambda表达式</div>
     <progress class="progress" value="0">
         <div class="progress-container">
             <span class="progress-bar"></span>
